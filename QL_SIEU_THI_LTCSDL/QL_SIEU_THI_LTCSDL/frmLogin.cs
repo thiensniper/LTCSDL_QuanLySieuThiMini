@@ -29,13 +29,14 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            tbl_TaiKhoan account = db.tbl_TaiKhoans.FirstOrDefault(res => res.TenDangNhap.Equals(tbUsername.Text));
+            tbl_TaiKhoan account = db.tbl_TaiKhoans.FirstOrDefault(res => res.TenDangNhap.Equals(tbUsername.Text) && res.MatKhau.Equals(tbPassword.Text));
             if (account != null)
             {
                 FrmMain frm = new FrmMain();
                 this.Hide();
                 frm.ShowDialog();
-                Application.Exit();
+                this.Show();
+                tbPassword.Clear();
             }
             else
             {

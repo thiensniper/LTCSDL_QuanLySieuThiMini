@@ -46,5 +46,10 @@ namespace QL_SIEU_THI_LTCSDL
         {
 
         }
+
+        private void barbtnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
