@@ -1,6 +1,6 @@
 ﻿namespace QL_SIEU_THI_LTCSDL
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
