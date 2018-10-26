@@ -37,6 +37,7 @@
             this.barbtnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnManageAdminAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnManageCustomerAccount = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageImportExport = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -45,8 +46,12 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.barButtonItemImport = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -61,14 +66,15 @@
             this.barbtnUserInfo,
             this.barbtnManageAdminAccount,
             this.barButtonItemImport,
-            this.barButtonItemExport});
+            this.barbtnManageCustomerAccount});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 12;
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(2);
+            this.ribbonControl.MaxItemId = 11;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageImportExport,
             this.ribbonPageManageAccount});
-            this.ribbonControl.Size = new System.Drawing.Size(700, 187);
+            this.ribbonControl.Size = new System.Drawing.Size(600, 140);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // applicationMenu
@@ -108,6 +114,14 @@
             this.barbtnManageAdminAccount.Caption = "Quản lý tài khoản Admin";
             this.barbtnManageAdminAccount.Id = 9;
             this.barbtnManageAdminAccount.Name = "barbtnManageAdminAccount";
+            this.barbtnManageAdminAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageAdminAccount_ItemClick);
+            // 
+            // barbtnManageCustomerAccount
+            // 
+            this.barbtnManageCustomerAccount.Caption = "Quản lý tài khoản khách hàng";
+            this.barbtnManageCustomerAccount.Id = 10;
+            this.barbtnManageCustomerAccount.Name = "barbtnManageCustomerAccount";
+            this.barbtnManageCustomerAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageCustomerAccount_ItemClick);
             // 
             // ribbonPageImportExport
             // 
@@ -139,6 +153,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnManageAdminAccount);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barbtnManageCustomerAccount);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
@@ -165,13 +180,37 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 450);
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Quản lý tài khoản Admin";
+            this.barButtonItem3.Id = 9;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Quản lý tài khoản Admin";
+            this.barButtonItem4.Id = 9;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // FrmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.ribbonControl);
+            this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
             this.Ribbon = this.ribbonControl;
             this.Text = "Quản lý Siêu thị Mini";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +233,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItemImport;
         private DevExpress.XtraBars.BarButtonItem barButtonItemExport;
+        private DevExpress.XtraBars.BarButtonItem barbtnManageCustomerAccount;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 

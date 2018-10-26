@@ -16,5 +16,30 @@ namespace QL_SIEU_THI_LTCSDL
         {
             InitializeComponent();
         }
+
+        public void OpenForm(Type typeform)
+        {
+            foreach (Form frm in MdiChildren)
+            {
+                if (frm.GetType() == typeform)
+                {
+                    frm.Activate();
+                    return;
+                }
+            }
+            Form f = (Form)Activator.CreateInstance(typeform);
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void barbtnManageAdminAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.OpenForm(typeof(FrmManageAccountAdmin));
+        }
+
+        private void barbtnManageCustomerAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.OpenForm(typeof(FrmManageAccountCustomercs));
+        }
     }
 }
