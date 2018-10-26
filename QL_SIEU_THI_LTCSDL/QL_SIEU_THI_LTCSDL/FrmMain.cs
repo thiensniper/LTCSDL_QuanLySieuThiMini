@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QL_SIEU_THI_LTCSDL
 {
-    public partial class FrmMain : Form
+    public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public FrmMain()
         {
@@ -40,6 +40,11 @@ namespace QL_SIEU_THI_LTCSDL
         private void barbtnManageCustomerAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.OpenForm(typeof(FrmManageAccountCustomercs));
+        }
+
+        private void barbtnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
