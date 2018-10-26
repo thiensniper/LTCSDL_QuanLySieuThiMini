@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.applicationMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
             this.barbtnLogin = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnUserInfo = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnManageAdminAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemImport = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnManageCustomerAccount = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageImportExport = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageManageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.barButtonItemImport = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -74,7 +73,7 @@
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageImportExport,
             this.ribbonPageManageAccount});
-            this.ribbonControl.Size = new System.Drawing.Size(600, 140);
+            this.ribbonControl.Size = new System.Drawing.Size(700, 187);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // applicationMenu
@@ -90,6 +89,7 @@
             this.barbtnLogin.Caption = "Đăng nhập";
             this.barbtnLogin.Id = 6;
             this.barbtnLogin.Name = "barbtnLogin";
+            this.barbtnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnLogin_ItemClick);
             // 
             // barbtnUserInfo
             // 
@@ -115,6 +115,13 @@
             this.barbtnManageAdminAccount.Id = 9;
             this.barbtnManageAdminAccount.Name = "barbtnManageAdminAccount";
             this.barbtnManageAdminAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageAdminAccount_ItemClick);
+            // 
+            // barButtonItemImport
+            // 
+            this.barButtonItemImport.Caption = "Nhập hàng";
+            this.barButtonItemImport.Id = 10;
+            this.barButtonItemImport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemImport.ImageOptions.LargeImage")));
+            this.barButtonItemImport.Name = "barButtonItemImport";
             // 
             // barbtnManageCustomerAccount
             // 
@@ -143,6 +150,13 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
+            // barButtonItemExport
+            // 
+            this.barButtonItemExport.Caption = "Xuất hàng";
+            this.barButtonItemExport.Id = 11;
+            this.barButtonItemExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemExport.ImageOptions.LargeImage")));
+            this.barButtonItemExport.Name = "barButtonItemExport";
+            // 
             // ribbonPageManageAccount
             // 
             this.ribbonPageManageAccount.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -161,25 +175,6 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Blue";
             // 
-            // barButtonItemImport
-            // 
-            this.barButtonItemImport.Caption = "Nhập hàng";
-            this.barButtonItemImport.Id = 10;
-            this.barButtonItemImport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItemImport.Name = "barButtonItemImport";
-            // 
-            // barButtonItemExport
-            // 
-            this.barButtonItemExport.Caption = "Xuất hàng";
-            this.barButtonItemExport.Id = 11;
-            this.barButtonItemExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemExport.ImageOptions.LargeImage")));
-            this.barButtonItemExport.Name = "barButtonItemExport";
-            // 
-            // FrmMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 450);
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "Quản lý tài khoản Admin";
@@ -198,9 +193,9 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
