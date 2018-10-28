@@ -40,6 +40,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageAccountCustomercs));
             this.dgvCustomerAccount = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnInsert = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -55,11 +60,6 @@
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
-            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Sdt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -99,6 +99,51 @@
             this.DiaChi});
             this.gridView1.GridControl = this.dgvCustomerAccount;
             this.gridView1.Name = "gridView1";
+            // 
+            // Id
+            // 
+            this.Id.Caption = "Mã số";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
+            this.Id.Width = 60;
+            // 
+            // HoTen
+            // 
+            this.HoTen.Caption = "Họ tên";
+            this.HoTen.FieldName = "HoTen";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Visible = true;
+            this.HoTen.VisibleIndex = 1;
+            this.HoTen.Width = 178;
+            // 
+            // Sdt
+            // 
+            this.Sdt.Caption = "Số điện thoại";
+            this.Sdt.FieldName = "Sdt";
+            this.Sdt.Name = "Sdt";
+            this.Sdt.Visible = true;
+            this.Sdt.VisibleIndex = 2;
+            this.Sdt.Width = 100;
+            // 
+            // Email
+            // 
+            this.Email.Caption = "Email";
+            this.Email.FieldName = "Email";
+            this.Email.Name = "Email";
+            this.Email.Visible = true;
+            this.Email.VisibleIndex = 3;
+            this.Email.Width = 147;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.Caption = "Địa chỉ";
+            this.DiaChi.FieldName = "DiaChi";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Visible = true;
+            this.DiaChi.VisibleIndex = 4;
+            this.DiaChi.Width = 157;
             // 
             // groupBox1
             // 
@@ -248,51 +293,6 @@
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // Id
-            // 
-            this.Id.Caption = "Mã số";
-            this.Id.FieldName = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = true;
-            this.Id.VisibleIndex = 0;
-            this.Id.Width = 60;
-            // 
-            // HoTen
-            // 
-            this.HoTen.Caption = "Họ tên";
-            this.HoTen.FieldName = "HoTen";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Visible = true;
-            this.HoTen.VisibleIndex = 1;
-            this.HoTen.Width = 178;
-            // 
-            // Sdt
-            // 
-            this.Sdt.Caption = "Số điện thoại";
-            this.Sdt.FieldName = "Sdt";
-            this.Sdt.Name = "Sdt";
-            this.Sdt.Visible = true;
-            this.Sdt.VisibleIndex = 2;
-            this.Sdt.Width = 100;
-            // 
-            // Email
-            // 
-            this.Email.Caption = "Email";
-            this.Email.FieldName = "Email";
-            this.Email.Name = "Email";
-            this.Email.Visible = true;
-            this.Email.VisibleIndex = 3;
-            this.Email.Width = 147;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.Caption = "Địa chỉ";
-            this.DiaChi.FieldName = "DiaChi";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 4;
-            this.DiaChi.Width = 157;
             // 
             // FrmManageAccountCustomercs
             // 
