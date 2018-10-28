@@ -13,9 +13,7 @@ namespace QL_SIEU_THI_LTCSDL
 {
     public partial class FrmLogin : Form
     {
-        Table<tbl_TaiKhoan> tbl_AdminAccount;
         DataAdminAccountDataContext db;
-        BindingManagerBase listAdminAccount;
 
         public FrmLogin()
         {

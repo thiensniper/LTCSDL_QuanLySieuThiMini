@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(223, 32);
             this.tbUsername.TabIndex = 0;
+            this.tbUsername.Text = "admin";
             this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // defaultLookAndFeel1
@@ -74,6 +76,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(223, 32);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.Text = "admin";
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2

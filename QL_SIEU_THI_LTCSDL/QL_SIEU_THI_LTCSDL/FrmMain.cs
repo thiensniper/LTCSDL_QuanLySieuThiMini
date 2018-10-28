@@ -42,11 +42,6 @@ namespace QL_SIEU_THI_LTCSDL
             this.OpenForm(typeof(FrmManageAccountCustomercs));
         }
 
-        private void barbtnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
         private void barbtnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();

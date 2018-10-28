@@ -70,7 +70,7 @@
             this.barbtnManageCustomerAccount});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl.MaxItemId = 1;
+            this.ribbonControl.MaxItemId = 2;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageImportExport,
@@ -91,7 +91,6 @@
             this.barbtnLogin.Caption = "Đăng nhập";
             this.barbtnLogin.Id = 6;
             this.barbtnLogin.Name = "barbtnLogin";
-            this.barbtnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnLogin_ItemClick);
             // 
             // barbtnUserInfo
             // 
@@ -114,8 +113,9 @@
             // 
             // barbtnManageAdminAccount
             // 
-            this.barbtnManageAdminAccount.Caption = "Quản lý tài khoản Admin";
+            this.barbtnManageAdminAccount.Caption = "Tài khoản Admin";
             this.barbtnManageAdminAccount.Id = 9;
+            this.barbtnManageAdminAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnManageAdminAccount.ImageOptions.Image")));
             this.barbtnManageAdminAccount.Name = "barbtnManageAdminAccount";
             this.barbtnManageAdminAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageAdminAccount_ItemClick);
             // 
@@ -128,8 +128,9 @@
             // 
             // barbtnManageCustomerAccount
             // 
-            this.barbtnManageCustomerAccount.Caption = "Quản lý tài khoản khách hàng";
+            this.barbtnManageCustomerAccount.Caption = "Tài khoản khách hàng";
             this.barbtnManageCustomerAccount.Id = 10;
+            this.barbtnManageCustomerAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnManageCustomerAccount.ImageOptions.Image")));
             this.barbtnManageCustomerAccount.Name = "barbtnManageCustomerAccount";
             this.barbtnManageCustomerAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageCustomerAccount_ItemClick);
             // 
@@ -172,7 +173,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnManageAdminAccount);
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnManageCustomerAccount);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Quản lý";
             // 
             // defaultLookAndFeel1
             // 
