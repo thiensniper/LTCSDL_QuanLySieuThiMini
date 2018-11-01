@@ -15,7 +15,7 @@ namespace QL_SIEU_THI_LTCSDL
     public partial class FrmManageAccountAdmin : DevExpress.XtraEditors.XtraForm
     {
         Table<tbl_TaiKhoan> tbl_AdminAccount;
-        DataAdminAccountDataContext db;
+        DatabaseDataContext db;
         BindingManagerBase listAdminAccount;
 
         public FrmManageAccountAdmin()
@@ -25,7 +25,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void FrmManageAccountAdmin_Load(object sender, EventArgs e)
         {
-            db = new DataAdminAccountDataContext();
+            db = new DatabaseDataContext();
             tbl_AdminAccount = db.tbl_TaiKhoans;
 
             LoadDataToCBOAuthorization();
@@ -60,6 +60,7 @@ namespace QL_SIEU_THI_LTCSDL
             {
                 listAdminAccount.EndCurrentEdit();
                 db.SubmitChanges();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
             }
             catch (Exception ex)
             {
@@ -70,6 +71,7 @@ namespace QL_SIEU_THI_LTCSDL
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             listAdminAccount.AddNew();
+            txtPassword.Text = "12345678";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

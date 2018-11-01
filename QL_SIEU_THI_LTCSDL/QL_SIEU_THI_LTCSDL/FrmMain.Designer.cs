@@ -39,16 +39,19 @@
             this.barbtnManageAdminAccount = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemImport = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnManageCustomerAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageImportExport = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageManageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.rbMangeProduct = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemProductCategory = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -67,15 +70,18 @@
             this.barbtnUserInfo,
             this.barbtnManageAdminAccount,
             this.barButtonItemImport,
-            this.barbtnManageCustomerAccount});
+            this.barbtnManageCustomerAccount,
+            this.barButtonItemExport,
+            this.barButtonItemProductCategory});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl.MaxItemId = 1;
+            this.ribbonControl.MaxItemId = 14;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageImportExport,
-            this.ribbonPageManageAccount});
-            this.ribbonControl.Size = new System.Drawing.Size(600, 147);
+            this.ribbonPageManageAccount,
+            this.rbMangeProduct});
+            this.ribbonControl.Size = new System.Drawing.Size(612, 146);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // applicationMenu
@@ -91,7 +97,6 @@
             this.barbtnLogin.Caption = "Đăng nhập";
             this.barbtnLogin.Id = 6;
             this.barbtnLogin.Name = "barbtnLogin";
-            this.barbtnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnLogin_ItemClick);
             // 
             // barbtnUserInfo
             // 
@@ -114,8 +119,9 @@
             // 
             // barbtnManageAdminAccount
             // 
-            this.barbtnManageAdminAccount.Caption = "Quản lý tài khoản Admin";
+            this.barbtnManageAdminAccount.Caption = "Tài khoản Admin";
             this.barbtnManageAdminAccount.Id = 9;
+            this.barbtnManageAdminAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnManageAdminAccount.ImageOptions.Image")));
             this.barbtnManageAdminAccount.Name = "barbtnManageAdminAccount";
             this.barbtnManageAdminAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageAdminAccount_ItemClick);
             // 
@@ -128,10 +134,19 @@
             // 
             // barbtnManageCustomerAccount
             // 
-            this.barbtnManageCustomerAccount.Caption = "Quản lý tài khoản khách hàng";
+            this.barbtnManageCustomerAccount.Caption = "Tài khoản khách hàng";
             this.barbtnManageCustomerAccount.Id = 10;
+            this.barbtnManageCustomerAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnManageCustomerAccount.ImageOptions.Image")));
             this.barbtnManageCustomerAccount.Name = "barbtnManageCustomerAccount";
             this.barbtnManageCustomerAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageCustomerAccount_ItemClick);
+            // 
+            // barButtonItemExport
+            // 
+            this.barButtonItemExport.Caption = "Xuất hàng";
+            this.barButtonItemExport.Id = 11;
+            this.barButtonItemExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemExport.ImageOptions.LargeImage")));
+            this.barButtonItemExport.Name = "barButtonItemExport";
+            this.barButtonItemExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemExport_ItemClick);
             // 
             // ribbonPageImportExport
             // 
@@ -153,13 +168,6 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
-            // barButtonItemExport
-            // 
-            this.barButtonItemExport.Caption = "Xuất hàng";
-            this.barButtonItemExport.Id = 11;
-            this.barButtonItemExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemExport.ImageOptions.LargeImage")));
-            this.barButtonItemExport.Name = "barButtonItemExport";
-            // 
             // ribbonPageManageAccount
             // 
             this.ribbonPageManageAccount.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -172,11 +180,11 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnManageAdminAccount);
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnManageCustomerAccount);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Quản lý";
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Blue";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
             // 
             // barButtonItem3
             // 
@@ -194,11 +202,33 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // rbMangeProduct
+            // 
+            this.rbMangeProduct.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4});
+            this.rbMangeProduct.Name = "rbMangeProduct";
+            this.rbMangeProduct.Text = "Quản lý sản phẩm";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItemProductCategory);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            // 
+            // barButtonItemProductCategory
+            // 
+            this.barButtonItemProductCategory.Caption = "Loại sản phẩm";
+            this.barButtonItemProductCategory.Id = 12;
+            this.barButtonItemProductCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemProductCategory.ImageOptions.Image")));
+            this.barButtonItemProductCategory.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemProductCategory.ImageOptions.LargeImage")));
+            this.barButtonItemProductCategory.Name = "barButtonItemProductCategory";
+            this.barButtonItemProductCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProductCategory_ItemClick_1);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(612, 372);
             this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -235,6 +265,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemProductCategory;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbMangeProduct;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
     }
 }
 

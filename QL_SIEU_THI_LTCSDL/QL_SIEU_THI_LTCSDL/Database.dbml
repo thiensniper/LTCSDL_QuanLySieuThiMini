@@ -10,4 +10,19 @@
       <Column Name="Quyen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.tbl_KhachHang" Member="tbl_KhachHangs">
+    <Type Name="tbl_KhachHang">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sdt" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_LoaiHangHoa" Member="tbl_LoaiHangHoas">
+    <Type Name="tbl_LoaiHangHoa">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>
