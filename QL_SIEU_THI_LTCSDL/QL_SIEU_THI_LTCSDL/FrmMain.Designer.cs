@@ -40,6 +40,7 @@
             this.barbtnManageCustomerAccount = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemProductCategory = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemProduct = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageImportExport = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -47,6 +48,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbMangeProduct = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -72,10 +74,11 @@
             this.barButtonItemImport,
             this.barbtnManageCustomerAccount,
             this.barButtonItemExport,
-            this.barButtonItemProductCategory});
+            this.barButtonItemProductCategory,
+            this.barButtonItemProduct});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl.MaxItemId = 14;
+            this.ribbonControl.MaxItemId = 15;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageImportExport,
@@ -123,7 +126,7 @@
             this.barButtonItemImport.Id = 10;
             this.barButtonItemImport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemImport.ImageOptions.LargeImage")));
             this.barButtonItemImport.Name = "barButtonItemImport";
-            this.barButtonItemImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemImport_ItemClick);
+            this.barButtonItemImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProduct_ItemClick);
             // 
             // barbtnManageCustomerAccount
             // 
@@ -149,6 +152,13 @@
             this.barButtonItemProductCategory.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemProductCategory.ImageOptions.LargeImage")));
             this.barButtonItemProductCategory.Name = "barButtonItemProductCategory";
             this.barButtonItemProductCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProductCategory_ItemClick_1);
+            // 
+            // barButtonItemProduct
+            // 
+            this.barButtonItemProduct.Caption = "Product";
+            this.barButtonItemProduct.Id = 14;
+            this.barButtonItemProduct.Name = "barButtonItemProduct";
+            this.barButtonItemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProduct_ItemClick);
             // 
             // ribbonPageImportExport
             // 
@@ -187,7 +197,8 @@
             // rbMangeProduct
             // 
             this.rbMangeProduct.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5});
             this.rbMangeProduct.Name = "rbMangeProduct";
             this.rbMangeProduct.Text = "Quản lý sản phẩm";
             // 
@@ -196,6 +207,12 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItemProductCategory);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItemProduct);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // defaultLookAndFeel1
             // 
@@ -268,6 +285,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rbMangeProduct;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemProduct;
     }
 }
 

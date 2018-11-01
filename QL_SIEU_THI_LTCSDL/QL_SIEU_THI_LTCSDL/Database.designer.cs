@@ -39,6 +39,9 @@ namespace QL_SIEU_THI_LTCSDL
     partial void Inserttbl_LoaiHangHoa(tbl_LoaiHangHoa instance);
     partial void Updatetbl_LoaiHangHoa(tbl_LoaiHangHoa instance);
     partial void Deletetbl_LoaiHangHoa(tbl_LoaiHangHoa instance);
+    partial void Inserttbl_HangHoa(tbl_HangHoa instance);
+    partial void Updatetbl_HangHoa(tbl_HangHoa instance);
+    partial void Deletetbl_HangHoa(tbl_HangHoa instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -92,6 +95,14 @@ namespace QL_SIEU_THI_LTCSDL
 			get
 			{
 				return this.GetTable<tbl_LoaiHangHoa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_HangHoa> tbl_HangHoas
+		{
+			get
+			{
+				return this.GetTable<tbl_HangHoa>();
 			}
 		}
 	}
@@ -446,6 +457,8 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		private string _Ten;
 		
+		private EntitySet<tbl_HangHoa> _tbl_HangHoas;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -458,6 +471,7 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		public tbl_LoaiHangHoa()
 		{
+			this._tbl_HangHoas = new EntitySet<tbl_HangHoa>(new Action<tbl_HangHoa>(this.attach_tbl_HangHoas), new Action<tbl_HangHoa>(this.detach_tbl_HangHoas));
 			OnCreated();
 		}
 		
@@ -497,6 +511,230 @@ namespace QL_SIEU_THI_LTCSDL
 					this._Ten = value;
 					this.SendPropertyChanged("Ten");
 					this.OnTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LoaiHangHoa_tbl_HangHoa", Storage="_tbl_HangHoas", ThisKey="Id", OtherKey="IdLoaiHang")]
+		public EntitySet<tbl_HangHoa> tbl_HangHoas
+		{
+			get
+			{
+				return this._tbl_HangHoas;
+			}
+			set
+			{
+				this._tbl_HangHoas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tbl_HangHoas(tbl_HangHoa entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_LoaiHangHoa = this;
+		}
+		
+		private void detach_tbl_HangHoas(tbl_HangHoa entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_LoaiHangHoa = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_HangHoa")]
+	public partial class tbl_HangHoa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Ten;
+		
+		private int _SoLuong;
+		
+		private int _IdLoaiHang;
+		
+		private int _GiaBan;
+		
+		private EntityRef<tbl_LoaiHangHoa> _tbl_LoaiHangHoa;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTenChanging(string value);
+    partial void OnTenChanged();
+    partial void OnSoLuongChanging(int value);
+    partial void OnSoLuongChanged();
+    partial void OnIdLoaiHangChanging(int value);
+    partial void OnIdLoaiHangChanged();
+    partial void OnGiaBanChanging(int value);
+    partial void OnGiaBanChanged();
+    #endregion
+		
+		public tbl_HangHoa()
+		{
+			this._tbl_LoaiHangHoa = default(EntityRef<tbl_LoaiHangHoa>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ten", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Ten
+		{
+			get
+			{
+				return this._Ten;
+			}
+			set
+			{
+				if ((this._Ten != value))
+				{
+					this.OnTenChanging(value);
+					this.SendPropertyChanging();
+					this._Ten = value;
+					this.SendPropertyChanged("Ten");
+					this.OnTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
+		public int SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this.OnSoLuongChanging(value);
+					this.SendPropertyChanging();
+					this._SoLuong = value;
+					this.SendPropertyChanged("SoLuong");
+					this.OnSoLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLoaiHang", DbType="Int NOT NULL")]
+		public int IdLoaiHang
+		{
+			get
+			{
+				return this._IdLoaiHang;
+			}
+			set
+			{
+				if ((this._IdLoaiHang != value))
+				{
+					if (this._tbl_LoaiHangHoa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdLoaiHangChanging(value);
+					this.SendPropertyChanging();
+					this._IdLoaiHang = value;
+					this.SendPropertyChanged("IdLoaiHang");
+					this.OnIdLoaiHangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Int NOT NULL")]
+		public int GiaBan
+		{
+			get
+			{
+				return this._GiaBan;
+			}
+			set
+			{
+				if ((this._GiaBan != value))
+				{
+					this.OnGiaBanChanging(value);
+					this.SendPropertyChanging();
+					this._GiaBan = value;
+					this.SendPropertyChanged("GiaBan");
+					this.OnGiaBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LoaiHangHoa_tbl_HangHoa", Storage="_tbl_LoaiHangHoa", ThisKey="IdLoaiHang", OtherKey="Id", IsForeignKey=true)]
+		public tbl_LoaiHangHoa tbl_LoaiHangHoa
+		{
+			get
+			{
+				return this._tbl_LoaiHangHoa.Entity;
+			}
+			set
+			{
+				tbl_LoaiHangHoa previousValue = this._tbl_LoaiHangHoa.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_LoaiHangHoa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_LoaiHangHoa.Entity = null;
+						previousValue.tbl_HangHoas.Remove(this);
+					}
+					this._tbl_LoaiHangHoa.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_HangHoas.Add(this);
+						this._IdLoaiHang = value.Id;
+					}
+					else
+					{
+						this._IdLoaiHang = default(int);
+					}
+					this.SendPropertyChanged("tbl_LoaiHangHoa");
 				}
 			}
 		}

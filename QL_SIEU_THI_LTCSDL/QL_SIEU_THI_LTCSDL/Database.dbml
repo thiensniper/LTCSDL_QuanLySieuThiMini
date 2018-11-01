@@ -23,6 +23,17 @@
     <Type Name="tbl_LoaiHangHoa">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Ten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_LoaiHangHoa_tbl_HangHoa" Member="tbl_HangHoas" ThisKey="Id" OtherKey="IdLoaiHang" Type="tbl_HangHoa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_HangHoa" Member="tbl_HangHoas">
+    <Type Name="tbl_HangHoa">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaBan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_LoaiHangHoa_tbl_HangHoa" Member="tbl_LoaiHangHoa" ThisKey="IdLoaiHang" OtherKey="Id" Type="tbl_LoaiHangHoa" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
