@@ -23,7 +23,7 @@ namespace QL_SIEU_THI_LTCSDL
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLSieuThiMini")]
-	public partial class DataAdminAccountDataContext : System.Data.Linq.DataContext
+	public partial class DatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -36,33 +36,36 @@ namespace QL_SIEU_THI_LTCSDL
     partial void Inserttbl_KhachHang(tbl_KhachHang instance);
     partial void Updatetbl_KhachHang(tbl_KhachHang instance);
     partial void Deletetbl_KhachHang(tbl_KhachHang instance);
+    partial void Inserttbl_LoaiHangHoa(tbl_LoaiHangHoa instance);
+    partial void Updatetbl_LoaiHangHoa(tbl_LoaiHangHoa instance);
+    partial void Deletetbl_LoaiHangHoa(tbl_LoaiHangHoa instance);
     #endregion
 		
-		public DataAdminAccountDataContext() : 
+		public DatabaseDataContext() : 
 				base(global::QL_SIEU_THI_LTCSDL.Properties.Settings.Default.QLSieuThiMiniConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataAdminAccountDataContext(string connection) : 
+		public DatabaseDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataAdminAccountDataContext(System.Data.IDbConnection connection) : 
+		public DatabaseDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataAdminAccountDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DatabaseDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataAdminAccountDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DatabaseDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -81,6 +84,14 @@ namespace QL_SIEU_THI_LTCSDL
 			get
 			{
 				return this.GetTable<tbl_KhachHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_LoaiHangHoa> tbl_LoaiHangHoas
+		{
+			get
+			{
+				return this.GetTable<tbl_LoaiHangHoa>();
 			}
 		}
 	}
@@ -400,6 +411,92 @@ namespace QL_SIEU_THI_LTCSDL
 					this._DiaChi = value;
 					this.SendPropertyChanged("DiaChi");
 					this.OnDiaChiChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_LoaiHangHoa")]
+	public partial class tbl_LoaiHangHoa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Ten;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTenChanging(string value);
+    partial void OnTenChanged();
+    #endregion
+		
+		public tbl_LoaiHangHoa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ten", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Ten
+		{
+			get
+			{
+				return this._Ten;
+			}
+			set
+			{
+				if ((this._Ten != value))
+				{
+					this.OnTenChanging(value);
+					this.SendPropertyChanging();
+					this._Ten = value;
+					this.SendPropertyChanged("Ten");
+					this.OnTenChanged();
 				}
 			}
 		}

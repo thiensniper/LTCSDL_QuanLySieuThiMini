@@ -13,7 +13,7 @@ namespace QL_SIEU_THI_LTCSDL
 {
     public partial class FrmLogin : Form
     {
-        DataAdminAccountDataContext db;
+        DatabaseDataContext db;
 
         public FrmLogin()
         {
@@ -44,7 +44,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            db = new DataAdminAccountDataContext();
+            db = new DatabaseDataContext();
         }
     }
 }

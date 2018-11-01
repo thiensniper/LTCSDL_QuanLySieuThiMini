@@ -34,6 +34,11 @@
             this.dgvAdminAccount = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenDangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MatKhau = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Quyen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnInsert = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -51,11 +56,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
-            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Sdt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenDangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MatKhau = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Quyen = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -106,6 +106,51 @@
             this.Id.Visible = true;
             this.Id.VisibleIndex = 0;
             this.Id.Width = 60;
+            // 
+            // HoTen
+            // 
+            this.HoTen.Caption = "Họ tên";
+            this.HoTen.FieldName = "HoTen";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Visible = true;
+            this.HoTen.VisibleIndex = 1;
+            this.HoTen.Width = 178;
+            // 
+            // Sdt
+            // 
+            this.Sdt.Caption = "Số điện thoại";
+            this.Sdt.FieldName = "Sdt";
+            this.Sdt.Name = "Sdt";
+            this.Sdt.Visible = true;
+            this.Sdt.VisibleIndex = 2;
+            this.Sdt.Width = 100;
+            // 
+            // TenDangNhap
+            // 
+            this.TenDangNhap.Caption = "Tên đăng nhập";
+            this.TenDangNhap.FieldName = "TenDangNhap";
+            this.TenDangNhap.Name = "TenDangNhap";
+            this.TenDangNhap.Visible = true;
+            this.TenDangNhap.VisibleIndex = 3;
+            this.TenDangNhap.Width = 100;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.Caption = "Mật khẩu";
+            this.MatKhau.FieldName = "MatKhau";
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.Visible = true;
+            this.MatKhau.VisibleIndex = 4;
+            this.MatKhau.Width = 113;
+            // 
+            // Quyen
+            // 
+            this.Quyen.Caption = "Quyền";
+            this.Quyen.FieldName = "Quyen";
+            this.Quyen.Name = "Quyen";
+            this.Quyen.Visible = true;
+            this.Quyen.VisibleIndex = 5;
+            this.Quyen.Width = 91;
             // 
             // groupBox1
             // 
@@ -274,51 +319,6 @@
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // HoTen
-            // 
-            this.HoTen.Caption = "Họ tên";
-            this.HoTen.FieldName = "HoTen";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Visible = true;
-            this.HoTen.VisibleIndex = 1;
-            this.HoTen.Width = 178;
-            // 
-            // Sdt
-            // 
-            this.Sdt.Caption = "Số điện thoại";
-            this.Sdt.FieldName = "Sdt";
-            this.Sdt.Name = "Sdt";
-            this.Sdt.Visible = true;
-            this.Sdt.VisibleIndex = 2;
-            this.Sdt.Width = 100;
-            // 
-            // TenDangNhap
-            // 
-            this.TenDangNhap.Caption = "Tên đăng nhập";
-            this.TenDangNhap.FieldName = "TenDangNhap";
-            this.TenDangNhap.Name = "TenDangNhap";
-            this.TenDangNhap.Visible = true;
-            this.TenDangNhap.VisibleIndex = 3;
-            this.TenDangNhap.Width = 100;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.Caption = "Mật khẩu";
-            this.MatKhau.FieldName = "MatKhau";
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.Visible = true;
-            this.MatKhau.VisibleIndex = 4;
-            this.MatKhau.Width = 113;
-            // 
-            // Quyen
-            // 
-            this.Quyen.Caption = "Quyền";
-            this.Quyen.FieldName = "Quyen";
-            this.Quyen.Name = "Quyen";
-            this.Quyen.Visible = true;
-            this.Quyen.VisibleIndex = 5;
-            this.Quyen.Width = 91;
             // 
             // FrmManageAccountAdmin
             // 

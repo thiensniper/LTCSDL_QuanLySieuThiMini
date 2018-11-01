@@ -15,7 +15,7 @@ namespace QL_SIEU_THI_LTCSDL
     public partial class FrmManageAccountCustomercs : DevExpress.XtraEditors.XtraForm
     {
         Table<tbl_KhachHang> tbl_CustomerAccount;
-        DataAdminAccountDataContext db;
+        DatabaseDataContext db;
         BindingManagerBase listCustomerAccount;
 
         public FrmManageAccountCustomercs()
@@ -25,7 +25,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void FrmManageAccountCustomercs_Load(object sender, EventArgs e)
         {
-            db = new DataAdminAccountDataContext();
+            db = new DatabaseDataContext();
             tbl_CustomerAccount = db.tbl_KhachHangs;
 
             LoadDatabaseToDataGridView();

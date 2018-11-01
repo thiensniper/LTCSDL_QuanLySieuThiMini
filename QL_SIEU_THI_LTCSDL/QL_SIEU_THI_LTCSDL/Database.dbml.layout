@@ -14,5 +14,11 @@
         <elementListCompartment Id="a9246fe5-c628-4ebd-b162-f9467fd0b9e1" absoluteBounds="3.765, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="88ec224f-ceb9-44be-874d-2053c0ef585a" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataAdminAccountDataContext/tbl_LoaiHangHoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa69ca04-45af-465a-8431-eb19b19057ae" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
