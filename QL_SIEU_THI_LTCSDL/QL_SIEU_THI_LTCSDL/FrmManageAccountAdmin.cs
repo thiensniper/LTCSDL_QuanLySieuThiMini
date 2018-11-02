@@ -18,6 +18,41 @@ namespace QL_SIEU_THI_LTCSDL
         DatabaseDataContext db;
         BindingManagerBase listAdminAccount;
 
+        #region Interface Properties
+        private bool normal;
+        private bool NormalInterface
+        {
+            get { return this.normal; }
+            set
+            {
+                this.normal = value;
+                dgvAdminAccount.Enabled = value;
+                btnCreate.Enabled = value;
+                btnDelete.Enabled = value;
+                btnEdit.Enabled = value;
+                btnSave.Enabled = !value;
+                btnCancel.Enabled = !value;
+                txtName.Enabled = !value;
+                txtUsername.Enabled = !value;
+                txtPassword.Enabled = !value;
+                txtPhone.Enabled = !value;
+                cboAuthorization.Enabled = !value;
+            }
+        }
+
+        private bool create;
+        private bool CreateInterface
+        {
+            get
+            { return this.create; }
+            set
+            {
+                this.create = value;
+                NormalInterface = !value;
+            }
+        }
+        #endregion
+
         public FrmManageAccountAdmin()
         {
             InitializeComponent();
@@ -30,7 +65,8 @@ namespace QL_SIEU_THI_LTCSDL
 
             LoadDataToCBOAuthorization();
             LoadDatabaseToDataGridView();
-
+            // Interface
+            NormalInterface = true;
             //Binding
             txtName.DataBindings.Add("Text", tbl_AdminAccount, "HoTen", true);
             txtUsername.DataBindings.Add("Text", tbl_AdminAccount, "TenDangNhap", true);
@@ -54,30 +90,60 @@ namespace QL_SIEU_THI_LTCSDL
             dgvAdminAccount.DataSource = tbl_AdminAccount;
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
+            listAdminAccount.AddNew();
+
+            // Interface
+            CreateInterface = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = XtraMessageBox.Show("Bạn có muốn xóa tài khoản này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                listAdminAccount.RemoveAt(listAdminAccount.Position);
+                db.SubmitChanges();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (CreateInterface)
+            {
+                listAdminAccount.CancelCurrentEdit();
+                CreateInterface = false;
+                return;
+            }
+            NormalInterface = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Length < 6)
+            {
+                MessageBox.Show("Mật khẩu phải từ 6 kí tự trở lên!", "Thông báo");
+                return;
+            }
             try
             {
                 listAdminAccount.EndCurrentEdit();
                 db.SubmitChanges();
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
+                XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             }
+            // Interface
+            NormalInterface = true;
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            listAdminAccount.AddNew();
-            txtPassword.Text = "12345678";
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            listAdminAccount.RemoveAt(listAdminAccount.Position);
-            db.SubmitChanges();
+            // Interface
+            NormalInterface = false;
         }
     }
 }

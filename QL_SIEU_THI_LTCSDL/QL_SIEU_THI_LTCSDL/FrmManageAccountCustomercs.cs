@@ -18,6 +18,40 @@ namespace QL_SIEU_THI_LTCSDL
         DatabaseDataContext db;
         BindingManagerBase listCustomerAccount;
 
+        #region Interface Properties
+        private bool normal;
+        private bool NormalInterface
+        {
+            get { return this.normal; }
+            set
+            {
+                this.normal = value;
+                dgvCustomerAccount.Enabled = value;
+                btnCreate.Enabled = value;
+                btnDelete.Enabled = value;
+                btnEdit.Enabled = value;
+                btnSave.Enabled = !value;
+                btnCancel.Enabled = !value;
+                txtName.Enabled = !value;
+                txtEmail.Enabled = !value;
+                txtAddress.Enabled = !value;
+                txtPhone.Enabled = !value;
+            }
+        }
+
+        private bool create;
+        private bool CreateInterface
+        {
+            get
+            { return this.create; }
+            set
+            {
+                this.create = value;
+                NormalInterface = !value;
+            }
+        }
+        #endregion
+
         public FrmManageAccountCustomercs()
         {
             InitializeComponent();
@@ -35,6 +69,8 @@ namespace QL_SIEU_THI_LTCSDL
             txtEmail.DataBindings.Add("Text", tbl_CustomerAccount, "Email", true);
             txtPhone.DataBindings.Add("Text", tbl_CustomerAccount, "Sdt", true);
             listCustomerAccount = this.BindingContext[tbl_CustomerAccount];
+            // Interface
+            NormalInterface = true;
         }
 
         private void LoadDatabaseToDataGridView()
@@ -59,12 +95,52 @@ namespace QL_SIEU_THI_LTCSDL
         private void btnCreate_Click(object sender, EventArgs e)
         {
             listCustomerAccount.AddNew();
+
+            // Interface
+            CreateInterface = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            listCustomerAccount.RemoveAt(listCustomerAccount.Position);
-            db.SubmitChanges();
+            DialogResult result = XtraMessageBox.Show("Bạn có muốn xóa tài khoản này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                listCustomerAccount.RemoveAt(listCustomerAccount.Position);
+                db.SubmitChanges();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listCustomerAccount.EndCurrentEdit();
+                db.SubmitChanges();
+                XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+            // Interface
+            NormalInterface = true;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (CreateInterface)
+            {
+                listCustomerAccount.CancelCurrentEdit();
+                CreateInterface = false;
+                return;
+            }
+            NormalInterface = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Interface
+            NormalInterface = false;
         }
     }
 }

@@ -35,8 +35,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageAccountCustomercs));
             this.dgvCustomerAccount = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -46,7 +46,6 @@
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnInsert = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.TextEdit();
@@ -57,7 +56,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerAccount)).BeginInit();
@@ -77,16 +78,16 @@
             // 
             this.dgvCustomerAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCustomerAccount.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.RelationName = "Level2";
             this.dgvCustomerAccount.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode3,
+            gridLevelNode4});
             this.dgvCustomerAccount.Location = new System.Drawing.Point(3, 20);
             this.dgvCustomerAccount.MainView = this.gridView1;
             this.dgvCustomerAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCustomerAccount.Name = "dgvCustomerAccount";
-            this.dgvCustomerAccount.Size = new System.Drawing.Size(994, 476);
+            this.dgvCustomerAccount.Size = new System.Drawing.Size(994, 484);
             this.dgvCustomerAccount.TabIndex = 0;
             this.dgvCustomerAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -155,22 +156,10 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1000, 500);
+            this.groupBox1.Size = new System.Drawing.Size(1000, 508);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách tài khoản";
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInsert.ImageOptions.Image")));
-            this.btnInsert.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnInsert.Location = new System.Drawing.Point(9, 30);
-            this.btnInsert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(126, 76);
-            this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "Thêm vào CSDL";
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // groupControl1
             // 
@@ -186,7 +175,7 @@
             this.groupControl1.Location = new System.Drawing.Point(1007, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(426, 322);
+            this.groupControl1.Size = new System.Drawing.Size(465, 322);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin tài khoản";
             // 
@@ -261,38 +250,63 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.btnUpdate);
+            this.groupControl2.Controls.Add(this.btnCancel);
+            this.groupControl2.Controls.Add(this.btnSave);
+            this.groupControl2.Controls.Add(this.btnEdit);
             this.groupControl2.Controls.Add(this.btnDelete);
             this.groupControl2.Controls.Add(this.btnCreate);
-            this.groupControl2.Controls.Add(this.btnInsert);
             this.groupControl2.Location = new System.Drawing.Point(1007, 330);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(426, 121);
+            this.groupControl2.Size = new System.Drawing.Size(465, 127);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Chức năng";
             // 
-            // btnUpdate
+            // btnCancel
             // 
-            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(329, 30);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(86, 76);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnCancel.Location = new System.Drawing.Point(374, 39);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(86, 76);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSave.Location = new System.Drawing.Point(282, 39);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(86, 76);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
+            this.btnEdit.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnEdit.Location = new System.Drawing.Point(190, 39);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(86, 76);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Chỉnh sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(236, 30);
+            this.btnDelete.Location = new System.Drawing.Point(97, 39);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(86, 76);
-            this.btnDelete.TabIndex = 0;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -300,11 +314,11 @@
             // 
             this.btnCreate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.ImageOptions.Image")));
             this.btnCreate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnCreate.Location = new System.Drawing.Point(142, 30);
+            this.btnCreate.Location = new System.Drawing.Point(5, 39);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(86, 76);
-            this.btnCreate.TabIndex = 0;
+            this.btnCreate.TabIndex = 5;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -312,7 +326,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 500);
+            this.ClientSize = new System.Drawing.Size(1475, 508);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupBox1);
@@ -342,7 +356,6 @@
         private DevExpress.XtraGrid.GridControl dgvCustomerAccount;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SimpleButton btnInsert;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit txtPhone;
         private DevExpress.XtraEditors.TextEdit txtAddress;
@@ -353,9 +366,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnCreate;
 
         #endregion
 
@@ -364,5 +374,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn Sdt;
         private DevExpress.XtraGrid.Columns.GridColumn Email;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnCreate;
     }
 }
