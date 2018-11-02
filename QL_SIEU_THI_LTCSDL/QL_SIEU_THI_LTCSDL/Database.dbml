@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSieuThiMini" Class="DataAdminAccountDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSieuThiMini" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QLSieuThiMini;Integrated Security=True" SettingsObjectName="QL_SIEU_THI_LTCSDL.Properties.Settings" SettingsPropertyName="QLSieuThiMiniConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_TaiKhoan" Member="tbl_TaiKhoans">
     <Type Name="tbl_TaiKhoan">
