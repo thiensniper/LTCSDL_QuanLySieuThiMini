@@ -77,5 +77,11 @@ namespace QL_SIEU_THI_LTCSDL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            tblHangHoaBindingSource.RemoveAt(tblHangHoaBindingSource.Position);
+            db.SubmitChanges();
+        }
     }
 }

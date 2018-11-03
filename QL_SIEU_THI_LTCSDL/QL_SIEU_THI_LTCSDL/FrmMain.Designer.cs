@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.applicationMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.barbtnLogin = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnUserInfo = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnUserInfo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnLogin = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnManageAdminAccount = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemImport = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnManageCustomerAccount = new DevExpress.XtraBars.BarButtonItem();
@@ -89,23 +89,10 @@
             // 
             // applicationMenu
             // 
-            this.applicationMenu.ItemLinks.Add(this.barbtnLogin);
-            this.applicationMenu.ItemLinks.Add(this.barbtnUserInfo);
             this.applicationMenu.ItemLinks.Add(this.barbtnLogout);
+            this.applicationMenu.ItemLinks.Add(this.barbtnUserInfo);
             this.applicationMenu.Name = "applicationMenu";
             this.applicationMenu.Ribbon = this.ribbonControl;
-            // 
-            // barbtnLogin
-            // 
-            this.barbtnLogin.Caption = "Đăng nhập";
-            this.barbtnLogin.Id = 6;
-            this.barbtnLogin.Name = "barbtnLogin";
-            // 
-            // barbtnUserInfo
-            // 
-            this.barbtnUserInfo.Caption = "Thông tin tài khoản";
-            this.barbtnUserInfo.Id = 8;
-            this.barbtnUserInfo.Name = "barbtnUserInfo";
             // 
             // barbtnLogout
             // 
@@ -114,11 +101,23 @@
             this.barbtnLogout.Name = "barbtnLogout";
             this.barbtnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnLogout_ItemClick);
             // 
+            // barbtnUserInfo
+            // 
+            this.barbtnUserInfo.Caption = "Thông tin tài khoản";
+            this.barbtnUserInfo.Id = 8;
+            this.barbtnUserInfo.Name = "barbtnUserInfo";
+            // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "Đăng nhập";
             this.barButtonItem1.Id = 5;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barbtnLogin
+            // 
+            this.barbtnLogin.Caption = "Đăng nhập";
+            this.barbtnLogin.Id = 6;
+            this.barbtnLogin.Name = "barbtnLogin";
             // 
             // barbtnManageAdminAccount
             // 
@@ -132,8 +131,10 @@
             // 
             this.barButtonItemImport.Caption = "Nhập hàng";
             this.barButtonItemImport.Id = 10;
-            this.barButtonItemImport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemImport.ImageOptions.LargeImage")));
+            this.barButtonItemImport.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
+            this.barButtonItemImport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
             this.barButtonItemImport.Name = "barButtonItemImport";
+            this.barButtonItemImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProduct_ItemClick);
             // 
             // barbtnManageCustomerAccount
             // 
@@ -147,7 +148,7 @@
             // 
             this.barButtonItemExport.Caption = "Xuất hàng";
             this.barButtonItemExport.Id = 11;
-            this.barButtonItemExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemExport.ImageOptions.LargeImage")));
+            this.barButtonItemExport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.forklift;
             this.barButtonItemExport.Name = "barButtonItemExport";
             this.barButtonItemExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemExport_ItemClick);
             // 
@@ -181,13 +182,13 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemImport);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Nhập hàng";
             // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemExport);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Xuất hàng";
             // 
             // ribbonPageManageAccount
             // 
@@ -269,7 +270,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageImportExport;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barbtnLogin;
         private DevExpress.XtraBars.BarButtonItem barbtnUserInfo;
@@ -287,6 +287,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemProductCategory;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbMangeProduct;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem barButtonItemProduct;
     }
