@@ -164,6 +164,8 @@
             // 
             this.barButtonItemProduct.Caption = "Product";
             this.barButtonItemProduct.Id = 14;
+            this.barButtonItemProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemProduct.ImageOptions.Image")));
+            this.barButtonItemProduct.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemProduct.ImageOptions.LargeImage")));
             this.barButtonItemProduct.Name = "barButtonItemProduct";
             this.barButtonItemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProduct_ItemClick);
             // 
