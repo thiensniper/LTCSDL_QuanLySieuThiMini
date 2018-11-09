@@ -39,18 +39,6 @@ namespace QL_SIEU_THI_LTCSDL
                 cboAuthorization.Enabled = !value;
             }
         }
-
-        private bool create;
-        private bool CreateInterface
-        {
-            get
-            { return this.create; }
-            set
-            {
-                this.create = value;
-                NormalInterface = !value;
-            }
-        }
         #endregion
 
         public FrmManageAccountAdmin()
@@ -95,7 +83,7 @@ namespace QL_SIEU_THI_LTCSDL
             listAdminAccount.AddNew();
 
             // Interface
-            CreateInterface = true;
+            NormalInterface = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -110,12 +98,9 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (CreateInterface)
-            {
-                listAdminAccount.CancelCurrentEdit();
-                CreateInterface = false;
-                return;
-            }
+            ChangeSet changeSet = db.GetChangeSet();
+            db.Refresh(RefreshMode.OverwriteCurrentValues, changeSet.Updates);
+            listAdminAccount.CancelCurrentEdit();
             NormalInterface = true;
         }
 

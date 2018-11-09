@@ -30,6 +30,8 @@ namespace QL_SIEU_THI_LTCSDL
             tbl_Admin account = db.tbl_Admins.FirstOrDefault(res => res.UsernameOfAdmin.Equals(tbUsername.Text) && res.PasswordOfAdmin.Equals(tbPassword.Text));
             if (account != null)
             {
+                SessionInfo.username = account.TenDangNhap;
+                SessionInfo.authorization = account.Quyen;
                 FrmMain frm = new FrmMain();
                 this.Hide();
                 frm.ShowDialog();
