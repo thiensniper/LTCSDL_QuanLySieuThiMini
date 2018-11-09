@@ -53,7 +53,7 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Location = new System.Drawing.Point(9, 78);
+            this.btnLog.Location = new System.Drawing.Point(9, 161);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(256, 44);
             this.btnLog.TabIndex = 5;
@@ -64,7 +64,7 @@
             // btnCheck
             // 
             this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheck.Location = new System.Drawing.Point(9, 128);
+            this.btnCheck.Location = new System.Drawing.Point(9, 211);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(256, 48);
             this.btnCheck.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 326);
+            this.ClientSize = new System.Drawing.Size(615, 334);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnCheck);

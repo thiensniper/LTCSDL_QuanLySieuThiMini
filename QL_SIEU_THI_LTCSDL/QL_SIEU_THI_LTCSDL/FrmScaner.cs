@@ -21,7 +21,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private FilterInfoCollection CaptureDevice;
         private VideoCaptureDevice FinalFrame;
-
+    
         public FrmScaner()
         {
             InitializeComponent();
@@ -29,8 +29,8 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-        
-            
+           
+
         }
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
