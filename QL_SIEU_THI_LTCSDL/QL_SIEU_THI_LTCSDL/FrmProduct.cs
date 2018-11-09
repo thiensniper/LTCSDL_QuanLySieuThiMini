@@ -15,9 +15,11 @@ namespace QL_SIEU_THI_LTCSDL
     //yêu cầu: Tồn tại ít nhất 1 loại sản phẩm.
     public partial class FrmProduct : DevExpress.XtraEditors.XtraForm
     {
-        private Table<tbl_HangHoa> tbl_Product;
+        private Table<tbl_Product> tbl_Product;
+        private Table<tbl_ProductCategory> tbl_ProductCategory;
         
         private DatabaseDataContext db;
+        private BindingManagerBase ListProduct;
 
         public FrmProduct()
         {
@@ -27,48 +29,56 @@ namespace QL_SIEU_THI_LTCSDL
         private void FrmProduct_Load(object sender, EventArgs e)
         {
             db = new DatabaseDataContext();
+            tbl_Product = db.tbl_Products;
+            tbl_ProductCategory = db.tbl_ProductCategories;
 
-            if (db.tbl_LoaiHangHoas.ToList().Count==0)
+            /*if (db.tbl_LoaiHangHoas.ToList().Count==0)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Không có loại sản phẩm trong CSDL", "Thông báo");
                 this.Close();
-            }
+            }*/
 
+            LoadDatabaseToCombobox();
             LoadDatabaseToDataGridView();
 
-            tblLoaiHangHoaBindingSource.DataSource = db.tbl_LoaiHangHoas;
-
             //Binding
-            txtName.DataBindings.Add("Text", tblHangHoaBindingSource, "Ten");
-            nupAmount.DataBindings.Add("Text", tblHangHoaBindingSource, "SoLuong");
-            txtPrice.DataBindings.Add("Text", tblHangHoaBindingSource, "GiaBan");
+            txtName.DataBindings.Add("Text", tbl_Product, "NameOfProduct", true);
+            nupAmount.DataBindings.Add("Text", tbl_Product, "NumberOfProduct", true);
+            txtPrice.DataBindings.Add("Text", tbl_Product, "PriceOfProduct", true);
+            cboProductCategory.DataBindings.Add("SelectedValue", tbl_Product, "ProductCategoryID", true);
+
+            ListProduct = this.BindingContext[tbl_Product];
+        }
+
+        private void LoadDatabaseToCombobox()
+        {
+            cboProductCategory.DataSource = tbl_ProductCategory;
+            cboProductCategory.DisplayMember = "NameOfProductCategory";
+            cboProductCategory.ValueMember = "ProductCategoryID";
         }
 
         private void LoadDatabaseToDataGridView()
         {
-            tbl_Product = db.tbl_HangHoas;
-            tblHangHoaBindingSource.DataSource = tbl_Product;
+            dgvProduct.DataSource = tbl_Product;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            //Lấy đại 1 loại hàng hóa
-            try
-            {
-                int id = db.tbl_LoaiHangHoas.ToList()[0].Id;
-                tblHangHoaBindingSource.Add(new tbl_HangHoa(){ IdLoaiHang = id });
-            }
-            catch(Exception ex)
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Không có loại sản phẩm trong CSDL", "Thông báo");
-            }
+            ListProduct.AddNew();
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            ListProduct.RemoveAt(ListProduct.Position);
+            db.SubmitChanges();
+            DevExpress.XtraEditors.XtraMessageBox.Show("Xóa khỏi CSDL thành công", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                tblHangHoaBindingSource.EndEdit();
+                ListProduct.EndCurrentEdit();
                 db.SubmitChanges();
                 DevExpress.XtraEditors.XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
             }
@@ -76,12 +86,6 @@ namespace QL_SIEU_THI_LTCSDL
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            tblHangHoaBindingSource.RemoveAt(tblHangHoaBindingSource.Position);
-            db.SubmitChanges();
         }
     }
 }

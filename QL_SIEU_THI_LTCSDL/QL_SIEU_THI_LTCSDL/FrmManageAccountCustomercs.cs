@@ -14,7 +14,7 @@ namespace QL_SIEU_THI_LTCSDL
 {
     public partial class FrmManageAccountCustomercs : DevExpress.XtraEditors.XtraForm
     {
-        Table<tbl_KhachHang> tbl_CustomerAccount;
+        Table<tbl_Customer> tbl_CustomerAccount;
         DatabaseDataContext db;
         BindingManagerBase listCustomerAccount;
 
@@ -60,14 +60,14 @@ namespace QL_SIEU_THI_LTCSDL
         private void FrmManageAccountCustomercs_Load(object sender, EventArgs e)
         {
             db = new DatabaseDataContext();
-            tbl_CustomerAccount = db.tbl_KhachHangs;
+            tbl_CustomerAccount = db.tbl_Customers;
 
             LoadDatabaseToDataGridView();
 
-            txtName.DataBindings.Add("Text", tbl_CustomerAccount, "HoTen", true);
-            txtAddress.DataBindings.Add("Text", tbl_CustomerAccount, "DiaChi", true);
-            txtEmail.DataBindings.Add("Text", tbl_CustomerAccount, "Email", true);
-            txtPhone.DataBindings.Add("Text", tbl_CustomerAccount, "Sdt", true);
+            txtName.DataBindings.Add("Text", tbl_CustomerAccount, "NameOfCustomer", true);
+            txtAddress.DataBindings.Add("Text", tbl_CustomerAccount, "AddressOfCustomer", true);
+            txtEmail.DataBindings.Add("Text", tbl_CustomerAccount, "EmailOfCustomer", true);
+            txtPhone.DataBindings.Add("Text", tbl_CustomerAccount, "TelOfCustomer", true);
             listCustomerAccount = this.BindingContext[tbl_CustomerAccount];
             // Interface
             NormalInterface = true;

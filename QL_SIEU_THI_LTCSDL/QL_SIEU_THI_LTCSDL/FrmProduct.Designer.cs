@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduct));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLoaiHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tblLoaiHangHoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblHangHoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvProduct = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ProductID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NameOfProduct = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NumberOfProduct = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NameOfProductCategory = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PriceOfProduct = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cboProductCategory = new System.Windows.Forms.ComboBox();
             this.nupAmount = new System.Windows.Forms.NumericUpDown();
             this.txtPrice = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
@@ -70,8 +72,7 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblLoaiHangHoaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblHangHoaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupAmount)).BeginInit();
@@ -100,79 +101,101 @@
             // 
             // dgvProduct
             // 
-            this.dgvProduct.AllowUserToAddRows = false;
-            this.dgvProduct.AutoGenerateColumns = false;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.tenDataGridViewTextBoxColumn,
-            this.soLuongDataGridViewTextBoxColumn,
-            this.idLoaiHangDataGridViewTextBoxColumn,
-            this.giaBanDataGridViewTextBoxColumn});
-            this.dgvProduct.DataSource = this.tblHangHoaBindingSource;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level2";
+            this.dgvProduct.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1,
+            gridLevelNode2});
             this.dgvProduct.Location = new System.Drawing.Point(3, 17);
+            this.dgvProduct.MainView = this.gridView1;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(663, 349);
-            this.dgvProduct.TabIndex = 0;
+            this.dgvProduct.TabIndex = 1;
+            this.dgvProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // idDataGridViewTextBoxColumn
+            // gridView1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Mã số";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ProductID,
+            this.NameOfProduct,
+            this.NumberOfProduct,
+            this.NameOfProductCategory,
+            this.PriceOfProduct});
+            this.gridView1.GridControl = this.dgvProduct;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
-            // tenDataGridViewTextBoxColumn
+            // ProductID
             // 
-            this.tenDataGridViewTextBoxColumn.DataPropertyName = "Ten";
-            this.tenDataGridViewTextBoxColumn.HeaderText = "Tên";
-            this.tenDataGridViewTextBoxColumn.Name = "tenDataGridViewTextBoxColumn";
+            this.ProductID.Caption = "Mã số";
+            this.ProductID.FieldName = "ProductID";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.Visible = true;
+            this.ProductID.VisibleIndex = 0;
+            this.ProductID.Width = 60;
             // 
-            // soLuongDataGridViewTextBoxColumn
+            // NameOfProduct
             // 
-            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.NameOfProduct.Caption = "Tên sản phẩm";
+            this.NameOfProduct.FieldName = "NameOfProduct";
+            this.NameOfProduct.Name = "NameOfProduct";
+            this.NameOfProduct.Visible = true;
+            this.NameOfProduct.VisibleIndex = 1;
+            this.NameOfProduct.Width = 178;
             // 
-            // idLoaiHangDataGridViewTextBoxColumn
+            // NumberOfProduct
             // 
-            this.idLoaiHangDataGridViewTextBoxColumn.DataPropertyName = "IdLoaiHang";
-            this.idLoaiHangDataGridViewTextBoxColumn.DataSource = this.tblLoaiHangHoaBindingSource;
-            this.idLoaiHangDataGridViewTextBoxColumn.DisplayMember = "Ten";
-            this.idLoaiHangDataGridViewTextBoxColumn.HeaderText = "Loại sản phẩm";
-            this.idLoaiHangDataGridViewTextBoxColumn.Name = "idLoaiHangDataGridViewTextBoxColumn";
-            this.idLoaiHangDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idLoaiHangDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idLoaiHangDataGridViewTextBoxColumn.ValueMember = "Id";
+            this.NumberOfProduct.Caption = "Số lượng";
+            this.NumberOfProduct.FieldName = "NumberOfProduct";
+            this.NumberOfProduct.Name = "NumberOfProduct";
+            this.NumberOfProduct.Visible = true;
+            this.NumberOfProduct.VisibleIndex = 2;
+            this.NumberOfProduct.Width = 100;
             // 
-            // tblLoaiHangHoaBindingSource
+            // NameOfProductCategory
             // 
-            this.tblLoaiHangHoaBindingSource.DataSource = typeof(QL_SIEU_THI_LTCSDL.tbl_LoaiHangHoa);
+            this.NameOfProductCategory.Caption = "Loại sản phẩm";
+            this.NameOfProductCategory.FieldName = "ProductCategoryID";
+            this.NameOfProductCategory.Name = "NameOfProductCategory";
+            this.NameOfProductCategory.Visible = true;
+            this.NameOfProductCategory.VisibleIndex = 3;
+            this.NameOfProductCategory.Width = 100;
             // 
-            // giaBanDataGridViewTextBoxColumn
+            // PriceOfProduct
             // 
-            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "GiaBan";
-            this.giaBanDataGridViewTextBoxColumn.HeaderText = "Giá bán";
-            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
-            // 
-            // tblHangHoaBindingSource
-            // 
-            this.tblHangHoaBindingSource.DataSource = typeof(QL_SIEU_THI_LTCSDL.tbl_HangHoa);
+            this.PriceOfProduct.Caption = "Đơn giá";
+            this.PriceOfProduct.FieldName = "PriceOfProduct";
+            this.PriceOfProduct.Name = "PriceOfProduct";
+            this.PriceOfProduct.Visible = true;
+            this.PriceOfProduct.VisibleIndex = 4;
+            this.PriceOfProduct.Width = 113;
             // 
             // groupControl1
             // 
             this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.groupControl1.Controls.Add(this.cboProductCategory);
             this.groupControl1.Controls.Add(this.nupAmount);
             this.groupControl1.Controls.Add(this.txtPrice);
             this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Location = new System.Drawing.Point(675, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(365, 262);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin sản phẩm";
+            // 
+            // cboProductCategory
+            // 
+            this.cboProductCategory.FormattingEnabled = true;
+            this.cboProductCategory.Location = new System.Drawing.Point(120, 114);
+            this.cboProductCategory.Name = "cboProductCategory";
+            this.cboProductCategory.Size = new System.Drawing.Size(236, 21);
+            this.cboProductCategory.TabIndex = 17;
             // 
             // nupAmount
             // 
@@ -213,6 +236,15 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Số lượng:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Loại sản phẩm:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -224,7 +256,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.simpleButton2);
+            this.groupControl2.Controls.Add(this.btnSave);
             this.groupControl2.Controls.Add(this.btnDelete);
             this.groupControl2.Controls.Add(this.btnCreate);
             this.groupControl2.Location = new System.Drawing.Point(675, 268);
@@ -233,16 +265,16 @@
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Chức năng";
             // 
-            // simpleButton2
+            // btnSave
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(282, 24);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(74, 62);
-            this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Text = "Cập nhật";
-            this.simpleButton2.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSave.Location = new System.Drawing.Point(282, 24);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(74, 62);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Cập nhật";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -403,8 +435,7 @@
             this.Load += new System.EventHandler(this.FrmProduct_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblLoaiHangHoaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblHangHoaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -432,7 +463,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnCreate;
         private DevExpress.XtraEditors.TextEdit txtPrice;
@@ -455,13 +486,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn SoLuong;
         private DevExpress.XtraGrid.Columns.GridColumn Ten;
         private DevExpress.XtraGrid.Columns.GridColumn Id;
-        private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.BindingSource tblLoaiHangHoaBindingSource;
-        private System.Windows.Forms.BindingSource tblHangHoaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn idLoaiHangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
+        private DevExpress.XtraGrid.GridControl dgvProduct;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductID;
+        private DevExpress.XtraGrid.Columns.GridColumn NameOfProduct;
+        private DevExpress.XtraGrid.Columns.GridColumn NumberOfProduct;
+        private DevExpress.XtraGrid.Columns.GridColumn NameOfProductCategory;
+        private DevExpress.XtraGrid.Columns.GridColumn PriceOfProduct;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboProductCategory;
     }
 }

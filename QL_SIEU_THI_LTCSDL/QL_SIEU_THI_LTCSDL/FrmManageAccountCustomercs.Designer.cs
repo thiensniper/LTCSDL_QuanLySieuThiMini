@@ -35,16 +35,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageAccountCustomercs));
             this.dgvCustomerAccount = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Sdt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NameOfCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TelOfCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmailOfCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AddressOfCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
@@ -77,17 +77,15 @@
             // dgvCustomerAccount
             // 
             this.dgvCustomerAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomerAccount.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.RelationName = "Level2";
+            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level2";
             this.dgvCustomerAccount.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3,
-            gridLevelNode4});
-            this.dgvCustomerAccount.Location = new System.Drawing.Point(3, 20);
+            gridLevelNode1,
+            gridLevelNode2});
+            this.dgvCustomerAccount.Location = new System.Drawing.Point(3, 17);
             this.dgvCustomerAccount.MainView = this.gridView1;
-            this.dgvCustomerAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCustomerAccount.Name = "dgvCustomerAccount";
-            this.dgvCustomerAccount.Size = new System.Drawing.Size(994, 484);
+            this.dgvCustomerAccount.Size = new System.Drawing.Size(851, 393);
             this.dgvCustomerAccount.TabIndex = 0;
             this.dgvCustomerAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -95,68 +93,66 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id,
-            this.HoTen,
-            this.Sdt,
-            this.Email,
-            this.DiaChi});
+            this.CustomerID,
+            this.NameOfCustomer,
+            this.TelOfCustomer,
+            this.EmailOfCustomer,
+            this.AddressOfCustomer});
             this.gridView1.GridControl = this.dgvCustomerAccount;
             this.gridView1.Name = "gridView1";
             // 
-            // Id
+            // CustomerID
             // 
-            this.Id.Caption = "Mã số";
-            this.Id.FieldName = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = true;
-            this.Id.VisibleIndex = 0;
-            this.Id.Width = 60;
+            this.CustomerID.Caption = "Mã số";
+            this.CustomerID.FieldName = "CustomerID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Visible = true;
+            this.CustomerID.VisibleIndex = 0;
+            this.CustomerID.Width = 60;
             // 
-            // HoTen
+            // NameOfCustomer
             // 
-            this.HoTen.Caption = "Họ tên";
-            this.HoTen.FieldName = "HoTen";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Visible = true;
-            this.HoTen.VisibleIndex = 1;
-            this.HoTen.Width = 178;
+            this.NameOfCustomer.Caption = "Họ tên";
+            this.NameOfCustomer.FieldName = "NameOfCustomer";
+            this.NameOfCustomer.Name = "NameOfCustomer";
+            this.NameOfCustomer.Visible = true;
+            this.NameOfCustomer.VisibleIndex = 1;
+            this.NameOfCustomer.Width = 178;
             // 
-            // Sdt
+            // TelOfCustomer
             // 
-            this.Sdt.Caption = "Số điện thoại";
-            this.Sdt.FieldName = "Sdt";
-            this.Sdt.Name = "Sdt";
-            this.Sdt.Visible = true;
-            this.Sdt.VisibleIndex = 2;
-            this.Sdt.Width = 100;
+            this.TelOfCustomer.Caption = "Số điện thoại";
+            this.TelOfCustomer.FieldName = "TelOfCustomer";
+            this.TelOfCustomer.Name = "TelOfCustomer";
+            this.TelOfCustomer.Visible = true;
+            this.TelOfCustomer.VisibleIndex = 2;
+            this.TelOfCustomer.Width = 100;
             // 
-            // Email
+            // EmailOfCustomer
             // 
-            this.Email.Caption = "Email";
-            this.Email.FieldName = "Email";
-            this.Email.Name = "Email";
-            this.Email.Visible = true;
-            this.Email.VisibleIndex = 3;
-            this.Email.Width = 147;
+            this.EmailOfCustomer.Caption = "Email";
+            this.EmailOfCustomer.FieldName = "EmailOfCustomer";
+            this.EmailOfCustomer.Name = "EmailOfCustomer";
+            this.EmailOfCustomer.Visible = true;
+            this.EmailOfCustomer.VisibleIndex = 3;
+            this.EmailOfCustomer.Width = 147;
             // 
-            // DiaChi
+            // AddressOfCustomer
             // 
-            this.DiaChi.Caption = "Địa chỉ";
-            this.DiaChi.FieldName = "DiaChi";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 4;
-            this.DiaChi.Width = 157;
+            this.AddressOfCustomer.Caption = "Địa chỉ";
+            this.AddressOfCustomer.FieldName = "AddressOfCustomer";
+            this.AddressOfCustomer.Name = "AddressOfCustomer";
+            this.AddressOfCustomer.Visible = true;
+            this.AddressOfCustomer.VisibleIndex = 4;
+            this.AddressOfCustomer.Width = 157;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCustomerAccount);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1000, 508);
+            this.groupBox1.Size = new System.Drawing.Size(857, 413);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách tài khoản";
@@ -172,79 +168,74 @@
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Location = new System.Drawing.Point(1007, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl1.Location = new System.Drawing.Point(863, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(465, 322);
+            this.groupControl1.Size = new System.Drawing.Size(399, 262);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin tài khoản";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(140, 76);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPhone.Location = new System.Drawing.Point(120, 62);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(275, 22);
+            this.txtPhone.Size = new System.Drawing.Size(236, 20);
             this.txtPhone.TabIndex = 9;
             // 
             // txtAddress
             // 
             this.txtAddress.EditValue = "";
-            this.txtAddress.Location = new System.Drawing.Point(140, 140);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAddress.Location = new System.Drawing.Point(120, 114);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(275, 22);
+            this.txtAddress.Size = new System.Drawing.Size(236, 20);
             this.txtAddress.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(140, 108);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Location = new System.Drawing.Point(120, 88);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(275, 22);
+            this.txtEmail.Size = new System.Drawing.Size(236, 20);
             this.txtEmail.TabIndex = 11;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(140, 44);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Location = new System.Drawing.Point(120, 36);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(275, 22);
+            this.txtName.Size = new System.Drawing.Size(236, 20);
             this.txtName.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Location = new System.Drawing.Point(5, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Họ và tên:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 112);
+            this.label2.Location = new System.Drawing.Point(5, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Email:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 144);
+            this.label3.Location = new System.Drawing.Point(5, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Địa chỉ:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 80);
+            this.label4.Location = new System.Drawing.Point(5, 65);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 17);
+            this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "SĐT: ";
             // 
@@ -255,10 +246,9 @@
             this.groupControl2.Controls.Add(this.btnEdit);
             this.groupControl2.Controls.Add(this.btnDelete);
             this.groupControl2.Controls.Add(this.btnCreate);
-            this.groupControl2.Location = new System.Drawing.Point(1007, 330);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl2.Location = new System.Drawing.Point(863, 268);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(465, 127);
+            this.groupControl2.Size = new System.Drawing.Size(399, 103);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Chức năng";
             // 
@@ -266,10 +256,9 @@
             // 
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(374, 39);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(321, 32);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 76);
+            this.btnCancel.Size = new System.Drawing.Size(74, 62);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -278,10 +267,9 @@
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(282, 39);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Location = new System.Drawing.Point(242, 32);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 76);
+            this.btnSave.Size = new System.Drawing.Size(74, 62);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -290,10 +278,9 @@
             // 
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnEdit.Location = new System.Drawing.Point(190, 39);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Location = new System.Drawing.Point(163, 32);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(86, 76);
+            this.btnEdit.Size = new System.Drawing.Size(74, 62);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -302,10 +289,9 @@
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(97, 39);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Location = new System.Drawing.Point(83, 32);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 76);
+            this.btnDelete.Size = new System.Drawing.Size(74, 62);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -314,23 +300,21 @@
             // 
             this.btnCreate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.ImageOptions.Image")));
             this.btnCreate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnCreate.Location = new System.Drawing.Point(5, 39);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Location = new System.Drawing.Point(4, 32);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(86, 76);
+            this.btnCreate.Size = new System.Drawing.Size(74, 62);
             this.btnCreate.TabIndex = 5;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // FrmManageAccountCustomercs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 508);
+            this.ClientSize = new System.Drawing.Size(1174, 413);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmManageAccountCustomercs";
             this.Text = "Quản lý tài khoản khách hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
@@ -369,11 +353,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn Id;
-        private DevExpress.XtraGrid.Columns.GridColumn HoTen;
-        private DevExpress.XtraGrid.Columns.GridColumn Sdt;
-        private DevExpress.XtraGrid.Columns.GridColumn Email;
-        private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerID;
+        private DevExpress.XtraGrid.Columns.GridColumn NameOfCustomer;
+        private DevExpress.XtraGrid.Columns.GridColumn TelOfCustomer;
+        private DevExpress.XtraGrid.Columns.GridColumn EmailOfCustomer;
+        private DevExpress.XtraGrid.Columns.GridColumn AddressOfCustomer;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnEdit;

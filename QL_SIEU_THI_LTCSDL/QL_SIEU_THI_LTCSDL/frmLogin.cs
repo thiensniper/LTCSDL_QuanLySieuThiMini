@@ -27,7 +27,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            tbl_TaiKhoan account = db.tbl_TaiKhoans.FirstOrDefault(res => res.TenDangNhap.Equals(tbUsername.Text) && res.MatKhau.Equals(tbPassword.Text));
+            tbl_Admin account = db.tbl_Admins.FirstOrDefault(res => res.UsernameOfAdmin.Equals(tbUsername.Text) && res.PasswordOfAdmin.Equals(tbPassword.Text));
             if (account != null)
             {
                 FrmMain frm = new FrmMain();

@@ -14,7 +14,7 @@ namespace QL_SIEU_THI_LTCSDL
 {
     public partial class FrmProductCategory : DevExpress.XtraEditors.XtraForm
     {
-        Table<tbl_LoaiHangHoa> tbl_ProductCategory;
+        Table<tbl_ProductCategory> tbl_ProductCategory;
         DatabaseDataContext db;
         BindingManagerBase listProductCategory;
         public FrmProductCategory()
@@ -25,12 +25,12 @@ namespace QL_SIEU_THI_LTCSDL
         private void FrmProductCategory_Load(object sender, EventArgs e)
         {
             db = new DatabaseDataContext();
-            tbl_ProductCategory= db.tbl_LoaiHangHoas;
+            tbl_ProductCategory= db.tbl_ProductCategories;
 
             LoadDatabaseToDataGridView();
 
             //Binding
-            txtName.DataBindings.Add("Text", tbl_ProductCategory, "Ten", true);
+            txtName.DataBindings.Add("Text", tbl_ProductCategory, "NameOfProductCategory");
             listProductCategory = this.BindingContext[tbl_ProductCategory];
         }
 

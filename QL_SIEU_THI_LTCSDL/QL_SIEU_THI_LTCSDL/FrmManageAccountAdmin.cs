@@ -14,7 +14,7 @@ namespace QL_SIEU_THI_LTCSDL
 {
     public partial class FrmManageAccountAdmin : DevExpress.XtraEditors.XtraForm
     {
-        Table<tbl_TaiKhoan> tbl_AdminAccount;
+        Table<tbl_Admin> tbl_AdminAccount;
         DatabaseDataContext db;
         BindingManagerBase listAdminAccount;
 
@@ -61,18 +61,18 @@ namespace QL_SIEU_THI_LTCSDL
         private void FrmManageAccountAdmin_Load(object sender, EventArgs e)
         {
             db = new DatabaseDataContext();
-            tbl_AdminAccount = db.tbl_TaiKhoans;
+            tbl_AdminAccount = db.tbl_Admins;
 
             LoadDataToCBOAuthorization();
             LoadDatabaseToDataGridView();
             // Interface
             NormalInterface = true;
             //Binding
-            txtName.DataBindings.Add("Text", tbl_AdminAccount, "HoTen", true);
-            txtUsername.DataBindings.Add("Text", tbl_AdminAccount, "TenDangNhap", true);
-            txtPassword.DataBindings.Add("Text", tbl_AdminAccount, "MatKhau", true);
-            txtPhone.DataBindings.Add("Text", tbl_AdminAccount, "Sdt", true);
-            cboAuthorization.DataBindings.Add("Text", tbl_AdminAccount, "Quyen", true);
+            txtName.DataBindings.Add("Text", tbl_AdminAccount, "NameOfAdmin", true);
+            txtUsername.DataBindings.Add("Text", tbl_AdminAccount, "UsernameOfAdmin", true);
+            txtPassword.DataBindings.Add("Text", tbl_AdminAccount, "PasswordOfAdmin", true);
+            txtPhone.DataBindings.Add("Text", tbl_AdminAccount, "TelOfAdmin", true);
+            cboAuthorization.DataBindings.Add("Text", tbl_AdminAccount, "AuthorizationOfAdmin", true);
             listAdminAccount = this.BindingContext[tbl_AdminAccount];
         }
 

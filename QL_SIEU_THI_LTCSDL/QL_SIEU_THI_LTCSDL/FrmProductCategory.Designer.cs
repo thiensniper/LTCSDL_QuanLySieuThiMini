@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductCategory));
             this.dgvProductCategory = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NameOfProductCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnInsert = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -57,11 +57,11 @@
             // dgvProductCategory
             // 
             this.dgvProductCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.RelationName = "Level2";
+            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level2";
             this.dgvProductCategory.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3,
-            gridLevelNode4});
+            gridLevelNode1,
+            gridLevelNode2});
             this.dgvProductCategory.Location = new System.Drawing.Point(3, 17);
             this.dgvProductCategory.MainView = this.gridView1;
             this.dgvProductCategory.Name = "dgvProductCategory";
@@ -73,28 +73,28 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id,
-            this.Ten});
+            this.ProductCategoryID,
+            this.NameOfProductCategory});
             this.gridView1.GridControl = this.dgvProductCategory;
             this.gridView1.Name = "gridView1";
             // 
-            // Id
+            // ProductCategoryID
             // 
-            this.Id.Caption = "Mã số";
-            this.Id.FieldName = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = true;
-            this.Id.VisibleIndex = 0;
-            this.Id.Width = 60;
+            this.ProductCategoryID.Caption = "Mã số";
+            this.ProductCategoryID.FieldName = "ProductCategoryID";
+            this.ProductCategoryID.Name = "ProductCategoryID";
+            this.ProductCategoryID.Visible = true;
+            this.ProductCategoryID.VisibleIndex = 0;
+            this.ProductCategoryID.Width = 60;
             // 
-            // Ten
+            // NameOfProductCategory
             // 
-            this.Ten.Caption = "Loại sản phẩm";
-            this.Ten.FieldName = "Ten";
-            this.Ten.Name = "Ten";
-            this.Ten.Visible = true;
-            this.Ten.VisibleIndex = 1;
-            this.Ten.Width = 178;
+            this.NameOfProductCategory.Caption = "Loại sản phẩm";
+            this.NameOfProductCategory.FieldName = "NameOfProductCategory";
+            this.NameOfProductCategory.Name = "NameOfProductCategory";
+            this.NameOfProductCategory.Visible = true;
+            this.NameOfProductCategory.VisibleIndex = 1;
+            this.NameOfProductCategory.Width = 178;
             // 
             // groupBox1
             // 
@@ -227,7 +227,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnCreate;
-        private DevExpress.XtraGrid.Columns.GridColumn Id;
-        private DevExpress.XtraGrid.Columns.GridColumn Ten;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductCategoryID;
+        private DevExpress.XtraGrid.Columns.GridColumn NameOfProductCategory;
     }
 }
