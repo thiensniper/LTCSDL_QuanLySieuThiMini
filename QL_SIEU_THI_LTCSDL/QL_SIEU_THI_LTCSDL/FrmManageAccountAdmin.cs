@@ -44,7 +44,11 @@ namespace QL_SIEU_THI_LTCSDL
         private bool CreateInterface
         {
             get
-            { return this.create; }
+            {
+                if (this.create && this.normal)
+                    this.create = !this.normal;
+                return this.create;
+            }
             set
             {
                 this.create = value;
@@ -110,12 +114,9 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (CreateInterface)
-            {
-                listAdminAccount.CancelCurrentEdit();
-                CreateInterface = false;
-                return;
-            }
+            ChangeSet changeSet = db.GetChangeSet();
+            db.Refresh(RefreshMode.OverwriteCurrentValues, changeSet.Updates);
+            listAdminAccount.CancelCurrentEdit();
             NormalInterface = true;
         }
 

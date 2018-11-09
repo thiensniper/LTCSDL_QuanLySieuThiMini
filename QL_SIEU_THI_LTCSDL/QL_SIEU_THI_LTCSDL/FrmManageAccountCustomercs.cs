@@ -128,12 +128,10 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (CreateInterface)
-            {
-                listCustomerAccount.CancelCurrentEdit();
-                CreateInterface = false;
-                return;
-            }
+            ChangeSet changeSet = db.GetChangeSet();
+            db.Refresh(RefreshMode.OverwriteCurrentValues, changeSet.Updates);
+            listCustomerAccount.CancelCurrentEdit();
+            NormalInterface = true;
             NormalInterface = true;
         }
 

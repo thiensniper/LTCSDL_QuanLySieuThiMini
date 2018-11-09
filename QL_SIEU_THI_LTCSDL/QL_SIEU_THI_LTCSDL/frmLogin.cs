@@ -30,6 +30,8 @@ namespace QL_SIEU_THI_LTCSDL
             tbl_TaiKhoan account = db.tbl_TaiKhoans.FirstOrDefault(res => res.TenDangNhap.Equals(tbUsername.Text) && res.MatKhau.Equals(tbPassword.Text));
             if (account != null)
             {
+                SessionInfo.username = account.TenDangNhap;
+                SessionInfo.authorization = account.Quyen;
                 FrmMain frm = new FrmMain();
                 this.Hide();
                 frm.ShowDialog();
