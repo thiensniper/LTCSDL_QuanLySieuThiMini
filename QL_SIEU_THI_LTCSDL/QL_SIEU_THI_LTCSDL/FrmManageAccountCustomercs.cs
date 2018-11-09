@@ -38,18 +38,6 @@ namespace QL_SIEU_THI_LTCSDL
                 txtPhone.Enabled = !value;
             }
         }
-
-        private bool create;
-        private bool CreateInterface
-        {
-            get
-            { return this.create; }
-            set
-            {
-                this.create = value;
-                NormalInterface = !value;
-            }
-        }
         #endregion
 
         public FrmManageAccountCustomercs()
@@ -97,7 +85,7 @@ namespace QL_SIEU_THI_LTCSDL
             listCustomerAccount.AddNew();
 
             // Interface
-            CreateInterface = true;
+            NormalInterface = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

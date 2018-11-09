@@ -39,22 +39,6 @@ namespace QL_SIEU_THI_LTCSDL
                 cboAuthorization.Enabled = !value;
             }
         }
-
-        private bool create;
-        private bool CreateInterface
-        {
-            get
-            {
-                if (this.create && this.normal)
-                    this.create = !this.normal;
-                return this.create;
-            }
-            set
-            {
-                this.create = value;
-                NormalInterface = !value;
-            }
-        }
         #endregion
 
         public FrmManageAccountAdmin()
@@ -99,7 +83,7 @@ namespace QL_SIEU_THI_LTCSDL
             listAdminAccount.AddNew();
 
             // Interface
-            CreateInterface = true;
+            NormalInterface = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
