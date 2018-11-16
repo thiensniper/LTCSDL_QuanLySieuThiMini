@@ -68,7 +68,7 @@
             this.dgvProductCategory.MainView = this.gridView1;
             this.dgvProductCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvProductCategory.Name = "dgvProductCategory";
-            this.dgvProductCategory.Size = new System.Drawing.Size(499, 430);
+            this.dgvProductCategory.Size = new System.Drawing.Size(843, 463);
             this.dgvProductCategory.TabIndex = 0;
             this.dgvProductCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -102,25 +102,30 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvProductCategory);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(505, 454);
+            this.groupBox1.Size = new System.Drawing.Size(849, 487);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách loại sản phẩm";
             // 
             // groupControl1
             // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Location = new System.Drawing.Point(510, 0);
+            this.groupControl1.Location = new System.Drawing.Point(855, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(485, 322);
+            this.groupControl1.Size = new System.Drawing.Size(485, 358);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin loại sản phẩm";
             // 
@@ -143,12 +148,13 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Controls.Add(this.btnCancel);
             this.groupControl2.Controls.Add(this.btnSave);
             this.groupControl2.Controls.Add(this.btnEdit);
             this.groupControl2.Controls.Add(this.btnDelete);
             this.groupControl2.Controls.Add(this.btnCreate);
-            this.groupControl2.Location = new System.Drawing.Point(510, 330);
+            this.groupControl2.Location = new System.Drawing.Point(855, 366);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(485, 121);
