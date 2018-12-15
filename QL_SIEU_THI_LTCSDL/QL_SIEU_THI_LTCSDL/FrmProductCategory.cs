@@ -17,6 +17,26 @@ namespace QL_SIEU_THI_LTCSDL
         Table<tbl_ProductCategory> tbl_ProductCategory;
         DatabaseDataContext db;
         BindingManagerBase listProductCategory;
+
+        #region Interface Properties
+        private bool normal;
+        private bool NormalInterface
+        {
+            get { return this.normal; }
+            set
+            {
+                this.normal = value;
+                dgvProductCategory.Enabled = value;
+                btnCreate.Enabled = value;
+                btnDelete.Enabled = value;
+                btnEdit.Enabled = value;
+                btnSave.Enabled = !value;
+                btnCancel.Enabled = !value;
+                txtName.Enabled = !value;
+            }
+        }
+        #endregion
+
         public FrmProductCategory()
         {
             InitializeComponent();
@@ -29,6 +49,8 @@ namespace QL_SIEU_THI_LTCSDL
 
             LoadDatabaseToDataGridView();
 
+            // Interface
+            NormalInterface = true;
             //Binding
             txtName.DataBindings.Add("Text", tbl_ProductCategory, "NameOfProductCategory");
             listProductCategory = this.BindingContext[tbl_ProductCategory];
@@ -42,40 +64,54 @@ namespace QL_SIEU_THI_LTCSDL
         private void btnCreate_Click(object sender, EventArgs e)
         {
             listProductCategory.AddNew();
+
+            // Interface
+            NormalInterface = false;
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            listProductCategory.RemoveAt(listProductCategory.Position);
-            db.SubmitChanges();
+            DialogResult result = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                listProductCategory.RemoveAt(listProductCategory.Position);
+                db.SubmitChanges();
+            }
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtName.Text.Length == 0)
+            {
+                MessageBox.Show("Tên không được trống!", "Thông báo");
+                return;
+            }
             try
             {
                 listProductCategory.EndCurrentEdit();
                 db.SubmitChanges();
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
+                XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             }
+            // Interface
+            NormalInterface = true;
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            try
-            {
-                listProductCategory.EndCurrentEdit();
-                db.SubmitChanges();
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            ChangeSet changeSet = db.GetChangeSet();
+            db.Refresh(RefreshMode.OverwriteCurrentValues, changeSet.Updates);
+            listProductCategory.CancelCurrentEdit();
+            NormalInterface = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Interface
+            NormalInterface = false;
         }
     }
 }

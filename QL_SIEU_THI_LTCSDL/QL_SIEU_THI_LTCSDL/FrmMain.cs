@@ -66,5 +66,10 @@ namespace QL_SIEU_THI_LTCSDL
         {
             this.OpenForm(typeof(FrmProduct));
         }
+
+        private void btnReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.OpenForm(typeof(FrmReport));
+        }
     }
 }

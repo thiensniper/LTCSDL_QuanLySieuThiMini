@@ -42,6 +42,7 @@
             this.barButtonItemExport = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemProductCategory = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReport = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageImportExport = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,6 +51,8 @@
             this.rbMangeProduct = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonReport = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -75,16 +78,18 @@
             this.barbtnManageCustomerAccount,
             this.barButtonItemExport,
             this.barButtonItemProductCategory,
-            this.barButtonItemProduct});
+            this.barButtonItemProduct,
+            this.btnReport});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl.MaxItemId = 15;
+            this.ribbonControl.MaxItemId = 16;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageImportExport,
             this.ribbonPageManageAccount,
-            this.rbMangeProduct});
-            this.ribbonControl.Size = new System.Drawing.Size(612, 146);
+            this.rbMangeProduct,
+            this.ribbonReport});
+            this.ribbonControl.Size = new System.Drawing.Size(1005, 185);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // applicationMenu
@@ -134,7 +139,6 @@
             this.barButtonItemImport.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
             this.barButtonItemImport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
             this.barButtonItemImport.Name = "barButtonItemImport";
-            this.barButtonItemImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProduct_ItemClick);
             // 
             // barbtnManageCustomerAccount
             // 
@@ -146,7 +150,7 @@
             // 
             // barButtonItemExport
             // 
-            this.barButtonItemExport.Caption = "Xuất hàng";
+            this.barButtonItemExport.Caption = "Bán hàng";
             this.barButtonItemExport.Id = 11;
             this.barButtonItemExport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.forklift;
             this.barButtonItemExport.Name = "barButtonItemExport";
@@ -169,6 +173,15 @@
             this.barButtonItemProduct.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemProduct.ImageOptions.LargeImage")));
             this.barButtonItemProduct.Name = "barButtonItemProduct";
             this.barButtonItemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProduct_ItemClick);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Caption = "Tạo báo cáo";
+            this.btnReport.Id = 15;
+            this.btnReport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.ImageOptions.Image")));
+            this.btnReport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReport.ImageOptions.LargeImage")));
+            this.btnReport.Name = "btnReport";
+            this.btnReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReport_ItemClick);
             // 
             // ribbonPageImportExport
             // 
@@ -224,6 +237,19 @@
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
+            // ribbonReport
+            // 
+            this.ribbonReport.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6});
+            this.ribbonReport.Name = "ribbonReport";
+            this.ribbonReport.Text = "Báo cáo";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnReport);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Báo cáo bán hàng";
+            // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
@@ -246,9 +272,9 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 372);
+            this.ClientSize = new System.Drawing.Size(1005, 542);
             this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -290,6 +316,9 @@
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem barButtonItemProduct;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonReport;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnReport;
     }
 }
 

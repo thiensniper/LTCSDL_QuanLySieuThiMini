@@ -21,6 +21,29 @@ namespace QL_SIEU_THI_LTCSDL
         private DatabaseDataContext db;
         private BindingManagerBase ListProduct;
 
+        #region Interface Properties
+        private bool normal;
+        private bool NormalInterface
+        {
+            get { return this.normal; }
+            set
+            {
+                this.normal = value;
+                dgvProduct.Enabled = value;
+                btnCreate.Enabled = value;
+                btnDelete.Enabled = value;
+                btnEdit.Enabled = value;
+                btnSave.Enabled = !value;
+                btnCancel.Enabled = !value;
+                txtName.Enabled = !value;
+                nupAmount.Enabled = !value;
+                txtPrice.Enabled = !value;
+                cboProductCategory.Enabled = !value;
+            }
+        }
+        #endregion
+
+
         public FrmProduct()
         {
             InitializeComponent();
@@ -41,6 +64,8 @@ namespace QL_SIEU_THI_LTCSDL
             LoadDatabaseToCombobox();
             LoadDatabaseToDataGridView();
 
+            // Interface
+            NormalInterface = true;
             //Binding
             txtName.DataBindings.Add("Text", tbl_Product, "NameOfProduct", true);
             nupAmount.DataBindings.Add("Text", tbl_Product, "NumberOfProduct", true);
@@ -67,24 +92,48 @@ namespace QL_SIEU_THI_LTCSDL
             ListProduct.AddNew();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            ListProduct.RemoveAt(ListProduct.Position);
-            db.SubmitChanges();
-            DevExpress.XtraEditors.XtraMessageBox.Show("Xóa khỏi CSDL thành công", "Thông báo");
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtName.Text.Length == 0 || txtPrice.Text.Length == 0 || cboProductCategory.SelectedIndex == -1)
+            {
+                MessageBox.Show("Thông tin không được trống!", "Thông báo");
+                return;
+            }
             try
             {
                 ListProduct.EndCurrentEdit();
                 db.SubmitChanges();
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
+                XtraMessageBox.Show("Lưu vào CSDL thành công", "Thông báo");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
+            }
+            // Interface
+            NormalInterface = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Interface
+            NormalInterface = false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ChangeSet changeSet = db.GetChangeSet();
+            db.Refresh(RefreshMode.OverwriteCurrentValues, changeSet.Updates);
+            ListProduct.CancelCurrentEdit();
+            NormalInterface = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                ListProduct.RemoveAt(ListProduct.Position);
+                db.SubmitChanges();
             }
         }
     }
