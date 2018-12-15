@@ -36,7 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lstBarcode = new System.Windows.Forms.ListBox();
+            this.tbnBarcode = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
@@ -75,7 +79,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(271, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(332, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,15 +108,43 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lstBarcode
+            // 
+            this.lstBarcode.FormattingEnabled = true;
+            this.lstBarcode.Location = new System.Drawing.Point(622, 51);
+            this.lstBarcode.Name = "lstBarcode";
+            this.lstBarcode.Size = new System.Drawing.Size(242, 264);
+            this.lstBarcode.TabIndex = 10;
+            // 
+            // tbnBarcode
+            // 
+            this.tbnBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnBarcode.Location = new System.Drawing.Point(622, 12);
+            this.tbnBarcode.Multiline = true;
+            this.tbnBarcode.Name = "tbnBarcode";
+            this.tbnBarcode.Size = new System.Drawing.Size(242, 33);
+            this.tbnBarcode.TabIndex = 11;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Location = new System.Drawing.Point(271, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(344, 319);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            // 
             // FrmScaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 334);
+            this.ClientSize = new System.Drawing.Size(885, 448);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tbnBarcode);
+            this.Controls.Add(this.lstBarcode);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -121,6 +153,7 @@
             this.Text = "FrmScaner";
             this.Load += new System.EventHandler(this.FrmScaner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +168,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ListBox lstBarcode;
+        private System.Windows.Forms.TextBox tbnBarcode;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

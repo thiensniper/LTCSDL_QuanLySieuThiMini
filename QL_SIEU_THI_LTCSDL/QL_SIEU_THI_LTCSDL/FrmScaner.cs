@@ -21,7 +21,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private FilterInfoCollection CaptureDevice;
         private VideoCaptureDevice FinalFrame;
-    
+        string temp;
         public FrmScaner()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace QL_SIEU_THI_LTCSDL
            
 
             pictureBox1.Visible = true;
-            btnLog.Visible = false;
+            btnLog.Enabled = false;
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -91,6 +91,10 @@ namespace QL_SIEU_THI_LTCSDL
 
                 DialogResult ShowDecode = new DialogResult();
                 ShowDecode = MessageBox.Show("CHUỖI NHẬN ĐƯỢC SAU KHI QUÉT LÀ: \n" + "<< "+decoded+" >>" + " \n"+"BẠN CÓ MUỐN TIẾP TỤC QUÉT HAY KHÔNG?"/*decoded*/, "THÔNG BÁO!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                tbnBarcode.Clear();
+                temp = decoded;
+                tbnBarcode.Text = temp;
+                lstBarcode.Items.Add(decoded);
                 if (ShowDecode == DialogResult.Yes) { timer1.Start(); }
                 if (ShowDecode == DialogResult.No) { timer1.Stop(); }
 

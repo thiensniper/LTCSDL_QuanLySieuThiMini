@@ -16,7 +16,8 @@ namespace QL_SIEU_THI_LTCSDL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            //Application.Run(new FrmLogin());
+            Application.Run(new FrmScaner());
         }
     }
 }
