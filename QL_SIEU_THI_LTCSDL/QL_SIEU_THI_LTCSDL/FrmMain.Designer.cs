@@ -188,7 +188,7 @@
             // 
             // barButtonItem5
             // 
-            this.barButtonItem5.Caption = "THo";
+            this.barButtonItem5.Caption = "Thông tin tài khoản";
             this.barButtonItem5.Id = 19;
             this.barButtonItem5.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.account;
             this.barButtonItem5.Name = "barButtonItem5";
@@ -237,7 +237,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Thông tin và đăng xuất";
             // 
             // defaultLookAndFeel1
             // 

@@ -74,17 +74,15 @@
             // dgvAdminAccount
             // 
             this.dgvAdminAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAdminAccount.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             gridLevelNode1.RelationName = "Level1";
             gridLevelNode2.RelationName = "Level2";
             this.dgvAdminAccount.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
             gridLevelNode2});
-            this.dgvAdminAccount.Location = new System.Drawing.Point(3, 20);
+            this.dgvAdminAccount.Location = new System.Drawing.Point(3, 17);
             this.dgvAdminAccount.MainView = this.gridView1;
-            this.dgvAdminAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvAdminAccount.Name = "dgvAdminAccount";
-            this.dgvAdminAccount.Size = new System.Drawing.Size(867, 463);
+            this.dgvAdminAccount.Size = new System.Drawing.Size(742, 376);
             this.dgvAdminAccount.TabIndex = 0;
             this.dgvAdminAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -163,10 +161,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvAdminAccount);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(873, 487);
+            this.groupBox1.Size = new System.Drawing.Size(748, 396);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách tài khoản";
@@ -186,99 +182,93 @@
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Location = new System.Drawing.Point(879, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl1.Location = new System.Drawing.Point(753, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(472, 366);
+            this.groupControl1.Size = new System.Drawing.Size(405, 297);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin tài khoản";
             // 
             // cboAuthorization
             // 
-            this.cboAuthorization.Location = new System.Drawing.Point(140, 172);
-            this.cboAuthorization.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboAuthorization.Location = new System.Drawing.Point(120, 140);
             this.cboAuthorization.Name = "cboAuthorization";
             this.cboAuthorization.Properties.AllowDropDownWhenReadOnly = DevExpress.Utils.DefaultBoolean.False;
             this.cboAuthorization.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboAuthorization.Size = new System.Drawing.Size(275, 22);
+            this.cboAuthorization.Size = new System.Drawing.Size(236, 20);
             this.cboAuthorization.TabIndex = 13;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(140, 140);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPhone.Location = new System.Drawing.Point(120, 114);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(275, 22);
+            this.txtPhone.Size = new System.Drawing.Size(236, 20);
             this.txtPhone.TabIndex = 9;
             // 
             // txtPassword
             // 
             this.txtPassword.EditValue = "";
-            this.txtPassword.Location = new System.Drawing.Point(140, 108);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Location = new System.Drawing.Point(120, 88);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(275, 22);
+            this.txtPassword.Size = new System.Drawing.Size(236, 20);
             this.txtPassword.TabIndex = 10;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(140, 76);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Location = new System.Drawing.Point(120, 62);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(275, 22);
+            this.txtUsername.Size = new System.Drawing.Size(236, 20);
             this.txtUsername.TabIndex = 11;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(140, 44);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Location = new System.Drawing.Point(120, 36);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(275, 22);
+            this.txtName.Size = new System.Drawing.Size(236, 20);
             this.txtName.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Location = new System.Drawing.Point(5, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Họ và tên:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 80);
+            this.label2.Location = new System.Drawing.Point(5, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 17);
+            this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tên đăng nhập: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 176);
+            this.label5.Location = new System.Drawing.Point(5, 143);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Quyền: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 112);
+            this.label3.Location = new System.Drawing.Point(5, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Mật khẩu: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 144);
+            this.label4.Location = new System.Drawing.Point(5, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 17);
+            this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "SĐT: ";
             // 
@@ -290,10 +280,9 @@
             this.groupControl2.Controls.Add(this.btnEdit);
             this.groupControl2.Controls.Add(this.btnDelete);
             this.groupControl2.Controls.Add(this.btnCreate);
-            this.groupControl2.Location = new System.Drawing.Point(879, 366);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl2.Location = new System.Drawing.Point(753, 297);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(472, 121);
+            this.groupControl2.Size = new System.Drawing.Size(405, 98);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Chức năng";
             // 
@@ -301,10 +290,9 @@
             // 
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(376, 30);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(322, 24);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 76);
+            this.btnCancel.Size = new System.Drawing.Size(74, 62);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -313,10 +301,9 @@
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(283, 30);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Location = new System.Drawing.Point(243, 24);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 76);
+            this.btnSave.Size = new System.Drawing.Size(74, 62);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -325,10 +312,9 @@
             // 
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnEdit.Location = new System.Drawing.Point(192, 30);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Location = new System.Drawing.Point(165, 24);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(86, 76);
+            this.btnEdit.Size = new System.Drawing.Size(74, 62);
             this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -337,10 +323,9 @@
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(99, 30);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Location = new System.Drawing.Point(85, 24);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 76);
+            this.btnDelete.Size = new System.Drawing.Size(74, 62);
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -349,23 +334,21 @@
             // 
             this.btnCreate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.ImageOptions.Image")));
             this.btnCreate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnCreate.Location = new System.Drawing.Point(7, 30);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Location = new System.Drawing.Point(6, 24);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(86, 76);
+            this.btnCreate.Size = new System.Drawing.Size(74, 62);
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // FrmManageAccountAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 500);
+            this.ClientSize = new System.Drawing.Size(1159, 406);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmManageAccountAdmin";
             this.Text = "Quản lý tài khoản Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
