@@ -63,6 +63,36 @@ namespace QL_SIEU_THI_LTCSDL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _020_287_open_product_box_install_128 {
+            get {
+                object obj = ResourceManager.GetObject("020_287_open_product_box_install-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap account {
+            get {
+                object obj = ResourceManager.GetObject("account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap client_512 {
+            get {
+                object obj = ResourceManager.GetObject("client-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cuahang {
             get {
                 object obj = ResourceManager.GetObject("cuahang", resourceCulture);
@@ -76,6 +106,36 @@ namespace QL_SIEU_THI_LTCSDL.Properties {
         internal static System.Drawing.Bitmap forklift {
             get {
                 object obj = ResourceManager.GetObject("forklift", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap revenue2 {
+            get {
+                object obj = ResourceManager.GetObject("revenue2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Seo_Admin_01_128 {
+            get {
+                object obj = ResourceManager.GetObject("Seo_Admin-01-128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

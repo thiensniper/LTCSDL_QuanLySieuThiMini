@@ -67,8 +67,7 @@ namespace QL_SIEU_THI_LTCSDL
         private void LoadDataToCBOAuthorization()
         {
             cboAuthorization.Properties.Items.Add("Manager");
-            cboAuthorization.Properties.Items.Add("Import");
-            cboAuthorization.Properties.Items.Add("Export");
+            cboAuthorization.Properties.Items.Add("Staff");
 
             cboAuthorization.SelectedIndex = 0;
         }

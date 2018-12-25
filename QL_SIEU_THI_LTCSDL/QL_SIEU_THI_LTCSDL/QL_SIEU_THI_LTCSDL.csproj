@@ -110,12 +110,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="FrmImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmImport.Designer.cs">
-      <DependentUpon>FrmImport.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,9 +167,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionInfo.cs" />
-    <EmbeddedResource Include="FrmImport.resx">
-      <DependentUpon>FrmImport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +246,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\forklift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seo_Admin-01-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\client-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\020_287_open_product_box_install-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\revenue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\revenue2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\information.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

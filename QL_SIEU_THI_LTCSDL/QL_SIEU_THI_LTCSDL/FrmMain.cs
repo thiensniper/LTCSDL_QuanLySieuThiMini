@@ -52,24 +52,24 @@ namespace QL_SIEU_THI_LTCSDL
             this.OpenForm(typeof(FrmPayment));
         }
 
-        private void barButtonItemProductCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.OpenForm(typeof(FrmProductCategory));
-        }
-
         private void barButtonItemProductCategory_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.OpenForm(typeof(FrmProductCategory));
         }
-
-        private void barButtonItemProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        
+        private void barButtonItemImport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.OpenForm(typeof(FrmProduct));
         }
 
-        private void btnReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.OpenForm(typeof(FrmReport));
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }
