@@ -138,7 +138,7 @@ namespace QL_SIEU_THI_LTCSDL
 
                 //Bip sound
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-                player.SoundLocation = "..//sound//Beep.wav";
+                player.SoundLocation = "../../sound/Beep.wav";
                 player.Play();
 
                 //isEnableScanner = false;
