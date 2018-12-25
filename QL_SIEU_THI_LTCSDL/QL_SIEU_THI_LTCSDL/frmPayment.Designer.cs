@@ -58,10 +58,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblTelOfCustomer = new System.Windows.Forms.Label();
+            this.lblNameOfCustomer = new System.Windows.Forms.Label();
             this.txtCustomerID = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblNameOfCustomer = new System.Windows.Forms.Label();
-            this.lblTelOfCustomer = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -334,6 +334,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin khách hàng";
             // 
+            // lblTelOfCustomer
+            // 
+            this.lblTelOfCustomer.AutoSize = true;
+            this.lblTelOfCustomer.Location = new System.Drawing.Point(8, 86);
+            this.lblTelOfCustomer.Name = "lblTelOfCustomer";
+            this.lblTelOfCustomer.Size = new System.Drawing.Size(0, 13);
+            this.lblTelOfCustomer.TabIndex = 17;
+            // 
+            // lblNameOfCustomer
+            // 
+            this.lblNameOfCustomer.AutoSize = true;
+            this.lblNameOfCustomer.Location = new System.Drawing.Point(8, 61);
+            this.lblNameOfCustomer.Name = "lblNameOfCustomer";
+            this.lblNameOfCustomer.Size = new System.Drawing.Size(0, 13);
+            this.lblNameOfCustomer.TabIndex = 17;
+            // 
             // txtCustomerID
             // 
             this.txtCustomerID.Location = new System.Drawing.Point(90, 20);
@@ -352,22 +368,6 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Mã khách hàng:";
             // 
-            // lblNameOfCustomer
-            // 
-            this.lblNameOfCustomer.AutoSize = true;
-            this.lblNameOfCustomer.Location = new System.Drawing.Point(8, 61);
-            this.lblNameOfCustomer.Name = "lblNameOfCustomer";
-            this.lblNameOfCustomer.Size = new System.Drawing.Size(0, 13);
-            this.lblNameOfCustomer.TabIndex = 17;
-            // 
-            // lblTelOfCustomer
-            // 
-            this.lblTelOfCustomer.AutoSize = true;
-            this.lblTelOfCustomer.Location = new System.Drawing.Point(8, 86);
-            this.lblTelOfCustomer.Name = "lblTelOfCustomer";
-            this.lblTelOfCustomer.Size = new System.Drawing.Size(0, 13);
-            this.lblTelOfCustomer.TabIndex = 17;
-            // 
             // FrmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +379,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmPayment";
             this.Text = "frmPayment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPayment_FormClosing);
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();

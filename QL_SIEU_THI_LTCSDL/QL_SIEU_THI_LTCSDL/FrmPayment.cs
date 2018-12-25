@@ -216,5 +216,10 @@ namespace QL_SIEU_THI_LTCSDL
             txtProductID.Text = "";
             txtNumberOfProduct.Text = "1";
         }
+
+        private void FrmPayment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FinalFrame.Stop();
+        }
     }
 }
