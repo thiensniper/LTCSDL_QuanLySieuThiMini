@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSieuThiMini" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-EVQOD6D\SQLEXPRESS;Initial Catalog=QLSieuThiMini;Integrated Security=True" SettingsObjectName="QL_SIEU_THI_LTCSDL.Properties.Settings" SettingsPropertyName="QLSieuThiMiniConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QLSieuThiMini;Integrated Security=True" SettingsObjectName="QL_SIEU_THI_LTCSDL.Properties.Settings" SettingsPropertyName="QLSieuThiMiniConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_Admin" Member="tbl_Admins">
     <Type Name="tbl_Admin">
       <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -8,64 +8,6 @@
       <Column Name="UsernameOfAdmin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="PasswordOfAdmin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="AuthorizationOfAdmin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_Admin_tbl_Bill" Member="tbl_Bills" ThisKey="AdminID" OtherKey="AdminID" Type="tbl_Bill" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_ProductCategory" Member="tbl_ProductCategories">
-    <Type Name="tbl_ProductCategory">
-      <Column Name="ProductCategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NameOfProductCategory" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_ProductCategory_tbl_Product" Member="tbl_Products" ThisKey="ProductCategoryID" OtherKey="ProductCategoryID" Type="tbl_Product" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_Bill" Member="tbl_Bills">
-    <Type Name="tbl_Bill">
-      <Column Name="BillID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="BilledDate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbl_Bill_tbl_DetailedBill" Member="tbl_DetailedBills" ThisKey="BillID" OtherKey="IDBill" Type="tbl_DetailedBill" />
-      <Association Name="tbl_Admin_tbl_Bill" Member="tbl_Admin" ThisKey="AdminID" OtherKey="AdminID" Type="tbl_Admin" IsForeignKey="true" />
-      <Association Name="tbl_Customer_tbl_Bill" Member="tbl_Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_Customer" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_Customer" Member="tbl_Customers">
-    <Type Name="tbl_Customer">
-      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NameOfCustomer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TelOfCustomer" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="EmailOfCustomer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="AddressOfCustomer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="tbl_Customer_tbl_Bill" Member="tbl_Bills" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_Bill" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_DetailedBill" Member="tbl_DetailedBills">
-    <Type Name="tbl_DetailedBill">
-      <Column Name="IDBill" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="IDProduct" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UnitPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_Bill_tbl_DetailedBill" Member="tbl_Bill" ThisKey="IDBill" OtherKey="BillID" Type="tbl_Bill" IsForeignKey="true" />
-      <Association Name="tbl_Product_tbl_DetailedBill" Member="tbl_Product" ThisKey="IDProduct" OtherKey="ProductID" Type="tbl_Product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_DetailedImportedProduct" Member="tbl_DetailedImportedProducts">
-    <Type Name="tbl_DetailedImportedProduct">
-      <Column Name="ImportedProductID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NumberOfImportedProduct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PriceOfImportedProduct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DateOfExpiration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_ImportedProduct_tbl_DetailedImportedProduct" Member="tbl_ImportedProduct" ThisKey="ImportedProductID" OtherKey="ImportedProductID" Type="tbl_ImportedProduct" IsForeignKey="true" />
-      <Association Name="tbl_Product_tbl_DetailedImportedProduct" Member="tbl_Product" ThisKey="ProductID" OtherKey="ProductID" Type="tbl_Product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_ImportedProduct" Member="tbl_ImportedProducts">
-    <Type Name="tbl_ImportedProduct">
-      <Column Name="ImportedProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DateOfImportedProduct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_ImportedProduct_tbl_DetailedImportedProduct" Member="tbl_DetailedImportedProducts" ThisKey="ImportedProductID" OtherKey="ImportedProductID" Type="tbl_DetailedImportedProduct" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_Product" Member="tbl_Products">
@@ -75,9 +17,37 @@
       <Column Name="NumberOfProduct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ProductCategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PriceOfProduct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_Product_tbl_DetailedBill" Member="tbl_DetailedBills" ThisKey="ProductID" OtherKey="IDProduct" Type="tbl_DetailedBill" />
-      <Association Name="tbl_Product_tbl_DetailedImportedProduct" Member="tbl_DetailedImportedProducts" ThisKey="ProductID" OtherKey="ProductID" Type="tbl_DetailedImportedProduct" />
-      <Association Name="tbl_ProductCategory_tbl_Product" Member="tbl_ProductCategory" ThisKey="ProductCategoryID" OtherKey="ProductCategoryID" Type="tbl_ProductCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ProductCategory" Member="tbl_ProductCategories">
+    <Type Name="tbl_ProductCategory">
+      <Column Name="ProductCategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameOfProductCategory" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DetailedBill" Member="tbl_DetailedBills">
+    <Type Name="tbl_DetailedBill">
+      <Column Name="IDBill" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDProduct" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Customer" Member="tbl_Customers">
+    <Type Name="tbl_Customer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameOfCustomer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TelOfCustomer" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EmailOfCustomer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddressOfCustomer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Bill" Member="tbl_Bills">
+    <Type Name="tbl_Bill">
+      <Column Name="BillID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BilledDate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

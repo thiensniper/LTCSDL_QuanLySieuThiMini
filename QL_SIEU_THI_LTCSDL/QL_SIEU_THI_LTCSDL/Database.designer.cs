@@ -33,27 +33,21 @@ namespace QL_SIEU_THI_LTCSDL
     partial void Inserttbl_Admin(tbl_Admin instance);
     partial void Updatetbl_Admin(tbl_Admin instance);
     partial void Deletetbl_Admin(tbl_Admin instance);
-    partial void Inserttbl_ProductCategory(tbl_ProductCategory instance);
-    partial void Updatetbl_ProductCategory(tbl_ProductCategory instance);
-    partial void Deletetbl_ProductCategory(tbl_ProductCategory instance);
-    partial void Inserttbl_Bill(tbl_Bill instance);
-    partial void Updatetbl_Bill(tbl_Bill instance);
-    partial void Deletetbl_Bill(tbl_Bill instance);
-    partial void Inserttbl_Customer(tbl_Customer instance);
-    partial void Updatetbl_Customer(tbl_Customer instance);
-    partial void Deletetbl_Customer(tbl_Customer instance);
-    partial void Inserttbl_DetailedBill(tbl_DetailedBill instance);
-    partial void Updatetbl_DetailedBill(tbl_DetailedBill instance);
-    partial void Deletetbl_DetailedBill(tbl_DetailedBill instance);
-    partial void Inserttbl_DetailedImportedProduct(tbl_DetailedImportedProduct instance);
-    partial void Updatetbl_DetailedImportedProduct(tbl_DetailedImportedProduct instance);
-    partial void Deletetbl_DetailedImportedProduct(tbl_DetailedImportedProduct instance);
-    partial void Inserttbl_ImportedProduct(tbl_ImportedProduct instance);
-    partial void Updatetbl_ImportedProduct(tbl_ImportedProduct instance);
-    partial void Deletetbl_ImportedProduct(tbl_ImportedProduct instance);
     partial void Inserttbl_Product(tbl_Product instance);
     partial void Updatetbl_Product(tbl_Product instance);
     partial void Deletetbl_Product(tbl_Product instance);
+    partial void Inserttbl_ProductCategory(tbl_ProductCategory instance);
+    partial void Updatetbl_ProductCategory(tbl_ProductCategory instance);
+    partial void Deletetbl_ProductCategory(tbl_ProductCategory instance);
+    partial void Inserttbl_DetailedBill(tbl_DetailedBill instance);
+    partial void Updatetbl_DetailedBill(tbl_DetailedBill instance);
+    partial void Deletetbl_DetailedBill(tbl_DetailedBill instance);
+    partial void Inserttbl_Customer(tbl_Customer instance);
+    partial void Updatetbl_Customer(tbl_Customer instance);
+    partial void Deletetbl_Customer(tbl_Customer instance);
+    partial void Inserttbl_Bill(tbl_Bill instance);
+    partial void Updatetbl_Bill(tbl_Bill instance);
+    partial void Deletetbl_Bill(tbl_Bill instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -94,27 +88,19 @@ namespace QL_SIEU_THI_LTCSDL
 			}
 		}
 		
+		public System.Data.Linq.Table<tbl_Product> tbl_Products
+		{
+			get
+			{
+				return this.GetTable<tbl_Product>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tbl_ProductCategory> tbl_ProductCategories
 		{
 			get
 			{
 				return this.GetTable<tbl_ProductCategory>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Bill> tbl_Bills
-		{
-			get
-			{
-				return this.GetTable<tbl_Bill>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Customer> tbl_Customers
-		{
-			get
-			{
-				return this.GetTable<tbl_Customer>();
 			}
 		}
 		
@@ -126,27 +112,19 @@ namespace QL_SIEU_THI_LTCSDL
 			}
 		}
 		
-		public System.Data.Linq.Table<tbl_DetailedImportedProduct> tbl_DetailedImportedProducts
+		public System.Data.Linq.Table<tbl_Customer> tbl_Customers
 		{
 			get
 			{
-				return this.GetTable<tbl_DetailedImportedProduct>();
+				return this.GetTable<tbl_Customer>();
 			}
 		}
 		
-		public System.Data.Linq.Table<tbl_ImportedProduct> tbl_ImportedProducts
+		public System.Data.Linq.Table<tbl_Bill> tbl_Bills
 		{
 			get
 			{
-				return this.GetTable<tbl_ImportedProduct>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Product> tbl_Products
-		{
-			get
-			{
-				return this.GetTable<tbl_Product>();
+				return this.GetTable<tbl_Bill>();
 			}
 		}
 	}
@@ -169,8 +147,6 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		private string _AuthorizationOfAdmin;
 		
-		private EntitySet<tbl_Bill> _tbl_Bills;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -191,7 +167,6 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		public tbl_Admin()
 		{
-			this._tbl_Bills = new EntitySet<tbl_Bill>(new Action<tbl_Bill>(this.attach_tbl_Bills), new Action<tbl_Bill>(this.detach_tbl_Bills));
 			OnCreated();
 		}
 		
@@ -315,16 +290,161 @@ namespace QL_SIEU_THI_LTCSDL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Admin_tbl_Bill", Storage="_tbl_Bills", ThisKey="AdminID", OtherKey="AdminID")]
-		public EntitySet<tbl_Bill> tbl_Bills
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Product")]
+	public partial class tbl_Product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ProductID;
+		
+		private string _NameOfProduct;
+		
+		private int _NumberOfProduct;
+		
+		private int _ProductCategoryID;
+		
+		private int _PriceOfProduct;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProductIDChanging(int value);
+    partial void OnProductIDChanged();
+    partial void OnNameOfProductChanging(string value);
+    partial void OnNameOfProductChanged();
+    partial void OnNumberOfProductChanging(int value);
+    partial void OnNumberOfProductChanged();
+    partial void OnProductCategoryIDChanging(int value);
+    partial void OnProductCategoryIDChanged();
+    partial void OnPriceOfProductChanging(int value);
+    partial void OnPriceOfProductChanged();
+    #endregion
+		
+		public tbl_Product()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ProductID
 		{
 			get
 			{
-				return this._tbl_Bills;
+				return this._ProductID;
 			}
 			set
 			{
-				this._tbl_Bills.Assign(value);
+				if ((this._ProductID != value))
+				{
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameOfProduct", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string NameOfProduct
+		{
+			get
+			{
+				return this._NameOfProduct;
+			}
+			set
+			{
+				if ((this._NameOfProduct != value))
+				{
+					this.OnNameOfProductChanging(value);
+					this.SendPropertyChanging();
+					this._NameOfProduct = value;
+					this.SendPropertyChanged("NameOfProduct");
+					this.OnNameOfProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfProduct", DbType="Int NOT NULL")]
+		public int NumberOfProduct
+		{
+			get
+			{
+				return this._NumberOfProduct;
+			}
+			set
+			{
+				if ((this._NumberOfProduct != value))
+				{
+					this.OnNumberOfProductChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfProduct = value;
+					this.SendPropertyChanged("NumberOfProduct");
+					this.OnNumberOfProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductCategoryID", DbType="Int NOT NULL")]
+		public int ProductCategoryID
+		{
+			get
+			{
+				return this._ProductCategoryID;
+			}
+			set
+			{
+				if ((this._ProductCategoryID != value))
+				{
+					this.OnProductCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductCategoryID = value;
+					this.SendPropertyChanged("ProductCategoryID");
+					this.OnProductCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceOfProduct", DbType="Int NOT NULL")]
+		public int PriceOfProduct
+		{
+			get
+			{
+				return this._PriceOfProduct;
+			}
+			set
+			{
+				if ((this._PriceOfProduct != value))
+				{
+					this.OnPriceOfProductChanging(value);
+					this.SendPropertyChanging();
+					this._PriceOfProduct = value;
+					this.SendPropertyChanged("PriceOfProduct");
+					this.OnPriceOfProductChanged();
+				}
 			}
 		}
 		
@@ -347,18 +467,6 @@ namespace QL_SIEU_THI_LTCSDL
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_tbl_Bills(tbl_Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Admin = this;
-		}
-		
-		private void detach_tbl_Bills(tbl_Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Admin = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ProductCategory")]
@@ -370,8 +478,6 @@ namespace QL_SIEU_THI_LTCSDL
 		private int _ProductCategoryID;
 		
 		private string _NameOfProductCategory;
-		
-		private EntitySet<tbl_Product> _tbl_Products;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -385,7 +491,6 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		public tbl_ProductCategory()
 		{
-			this._tbl_Products = new EntitySet<tbl_Product>(new Action<tbl_Product>(this.attach_tbl_Products), new Action<tbl_Product>(this.detach_tbl_Products));
 			OnCreated();
 		}
 		
@@ -429,19 +534,6 @@ namespace QL_SIEU_THI_LTCSDL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_ProductCategory_tbl_Product", Storage="_tbl_Products", ThisKey="ProductCategoryID", OtherKey="ProductCategoryID")]
-		public EntitySet<tbl_Product> tbl_Products
-		{
-			get
-			{
-				return this._tbl_Products;
-			}
-			set
-			{
-				this._tbl_Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -461,227 +553,117 @@ namespace QL_SIEU_THI_LTCSDL
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_tbl_Products(tbl_Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_ProductCategory = this;
-		}
-		
-		private void detach_tbl_Products(tbl_Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_ProductCategory = null;
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Bill")]
-	public partial class tbl_Bill : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_DetailedBill")]
+	public partial class tbl_DetailedBill : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _BillID;
+		private int _IDBill;
 		
-		private int _BilledDate;
+		private int _IDProduct;
 		
-		private int _AdminID;
+		private int _Amount;
 		
-		private System.Nullable<int> _CustomerID;
-		
-		private EntitySet<tbl_DetailedBill> _tbl_DetailedBills;
-		
-		private EntityRef<tbl_Admin> _tbl_Admin;
-		
-		private EntityRef<tbl_Customer> _tbl_Customer;
+		private int _UnitPrice;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBillIDChanging(int value);
-    partial void OnBillIDChanged();
-    partial void OnBilledDateChanging(int value);
-    partial void OnBilledDateChanged();
-    partial void OnAdminIDChanging(int value);
-    partial void OnAdminIDChanged();
-    partial void OnCustomerIDChanging(System.Nullable<int> value);
-    partial void OnCustomerIDChanged();
+    partial void OnIDBillChanging(int value);
+    partial void OnIDBillChanged();
+    partial void OnIDProductChanging(int value);
+    partial void OnIDProductChanged();
+    partial void OnAmountChanging(int value);
+    partial void OnAmountChanged();
+    partial void OnUnitPriceChanging(int value);
+    partial void OnUnitPriceChanged();
     #endregion
 		
-		public tbl_Bill()
+		public tbl_DetailedBill()
 		{
-			this._tbl_DetailedBills = new EntitySet<tbl_DetailedBill>(new Action<tbl_DetailedBill>(this.attach_tbl_DetailedBills), new Action<tbl_DetailedBill>(this.detach_tbl_DetailedBills));
-			this._tbl_Admin = default(EntityRef<tbl_Admin>);
-			this._tbl_Customer = default(EntityRef<tbl_Customer>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int BillID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBill", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IDBill
 		{
 			get
 			{
-				return this._BillID;
+				return this._IDBill;
 			}
 			set
 			{
-				if ((this._BillID != value))
+				if ((this._IDBill != value))
 				{
-					this.OnBillIDChanging(value);
+					this.OnIDBillChanging(value);
 					this.SendPropertyChanging();
-					this._BillID = value;
-					this.SendPropertyChanged("BillID");
-					this.OnBillIDChanged();
+					this._IDBill = value;
+					this.SendPropertyChanged("IDBill");
+					this.OnIDBillChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BilledDate", DbType="Int NOT NULL")]
-		public int BilledDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProduct", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IDProduct
 		{
 			get
 			{
-				return this._BilledDate;
+				return this._IDProduct;
 			}
 			set
 			{
-				if ((this._BilledDate != value))
+				if ((this._IDProduct != value))
 				{
-					this.OnBilledDateChanging(value);
+					this.OnIDProductChanging(value);
 					this.SendPropertyChanging();
-					this._BilledDate = value;
-					this.SendPropertyChanged("BilledDate");
-					this.OnBilledDateChanged();
+					this._IDProduct = value;
+					this.SendPropertyChanged("IDProduct");
+					this.OnIDProductChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminID", DbType="Int NOT NULL")]
-		public int AdminID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int NOT NULL")]
+		public int Amount
 		{
 			get
 			{
-				return this._AdminID;
+				return this._Amount;
 			}
 			set
 			{
-				if ((this._AdminID != value))
+				if ((this._Amount != value))
 				{
-					if (this._tbl_Admin.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAdminIDChanging(value);
+					this.OnAmountChanging(value);
 					this.SendPropertyChanging();
-					this._AdminID = value;
-					this.SendPropertyChanged("AdminID");
-					this.OnAdminIDChanged();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int")]
-		public System.Nullable<int> CustomerID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Int NOT NULL")]
+		public int UnitPrice
 		{
 			get
 			{
-				return this._CustomerID;
+				return this._UnitPrice;
 			}
 			set
 			{
-				if ((this._CustomerID != value))
+				if ((this._UnitPrice != value))
 				{
-					if (this._tbl_Customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCustomerIDChanging(value);
+					this.OnUnitPriceChanging(value);
 					this.SendPropertyChanging();
-					this._CustomerID = value;
-					this.SendPropertyChanged("CustomerID");
-					this.OnCustomerIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Bill_tbl_DetailedBill", Storage="_tbl_DetailedBills", ThisKey="BillID", OtherKey="IDBill")]
-		public EntitySet<tbl_DetailedBill> tbl_DetailedBills
-		{
-			get
-			{
-				return this._tbl_DetailedBills;
-			}
-			set
-			{
-				this._tbl_DetailedBills.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Admin_tbl_Bill", Storage="_tbl_Admin", ThisKey="AdminID", OtherKey="AdminID", IsForeignKey=true)]
-		public tbl_Admin tbl_Admin
-		{
-			get
-			{
-				return this._tbl_Admin.Entity;
-			}
-			set
-			{
-				tbl_Admin previousValue = this._tbl_Admin.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_Admin.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_Admin.Entity = null;
-						previousValue.tbl_Bills.Remove(this);
-					}
-					this._tbl_Admin.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_Bills.Add(this);
-						this._AdminID = value.AdminID;
-					}
-					else
-					{
-						this._AdminID = default(int);
-					}
-					this.SendPropertyChanged("tbl_Admin");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Customer_tbl_Bill", Storage="_tbl_Customer", ThisKey="CustomerID", OtherKey="CustomerID", IsForeignKey=true)]
-		public tbl_Customer tbl_Customer
-		{
-			get
-			{
-				return this._tbl_Customer.Entity;
-			}
-			set
-			{
-				tbl_Customer previousValue = this._tbl_Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_Customer.Entity = null;
-						previousValue.tbl_Bills.Remove(this);
-					}
-					this._tbl_Customer.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_Bills.Add(this);
-						this._CustomerID = value.CustomerID;
-					}
-					else
-					{
-						this._CustomerID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_Customer");
+					this._UnitPrice = value;
+					this.SendPropertyChanged("UnitPrice");
+					this.OnUnitPriceChanged();
 				}
 			}
 		}
@@ -704,18 +686,6 @@ namespace QL_SIEU_THI_LTCSDL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tbl_DetailedBills(tbl_DetailedBill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Bill = this;
-		}
-		
-		private void detach_tbl_DetailedBills(tbl_DetailedBill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Bill = null;
 		}
 	}
 	
@@ -735,8 +705,6 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		private string _AddressOfCustomer;
 		
-		private EntitySet<tbl_Bill> _tbl_Bills;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -755,7 +723,6 @@ namespace QL_SIEU_THI_LTCSDL
 		
 		public tbl_Customer()
 		{
-			this._tbl_Bills = new EntitySet<tbl_Bill>(new Action<tbl_Bill>(this.attach_tbl_Bills), new Action<tbl_Bill>(this.detach_tbl_Bills));
 			OnCreated();
 		}
 		
@@ -859,247 +826,6 @@ namespace QL_SIEU_THI_LTCSDL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Customer_tbl_Bill", Storage="_tbl_Bills", ThisKey="CustomerID", OtherKey="CustomerID")]
-		public EntitySet<tbl_Bill> tbl_Bills
-		{
-			get
-			{
-				return this._tbl_Bills;
-			}
-			set
-			{
-				this._tbl_Bills.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tbl_Bills(tbl_Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Customer = this;
-		}
-		
-		private void detach_tbl_Bills(tbl_Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Customer = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_DetailedBill")]
-	public partial class tbl_DetailedBill : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IDBill;
-		
-		private int _IDProduct;
-		
-		private int _Amount;
-		
-		private int _UnitPrice;
-		
-		private EntityRef<tbl_Bill> _tbl_Bill;
-		
-		private EntityRef<tbl_Product> _tbl_Product;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDBillChanging(int value);
-    partial void OnIDBillChanged();
-    partial void OnIDProductChanging(int value);
-    partial void OnIDProductChanged();
-    partial void OnAmountChanging(int value);
-    partial void OnAmountChanged();
-    partial void OnUnitPriceChanging(int value);
-    partial void OnUnitPriceChanged();
-    #endregion
-		
-		public tbl_DetailedBill()
-		{
-			this._tbl_Bill = default(EntityRef<tbl_Bill>);
-			this._tbl_Product = default(EntityRef<tbl_Product>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBill", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IDBill
-		{
-			get
-			{
-				return this._IDBill;
-			}
-			set
-			{
-				if ((this._IDBill != value))
-				{
-					if (this._tbl_Bill.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIDBillChanging(value);
-					this.SendPropertyChanging();
-					this._IDBill = value;
-					this.SendPropertyChanged("IDBill");
-					this.OnIDBillChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProduct", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IDProduct
-		{
-			get
-			{
-				return this._IDProduct;
-			}
-			set
-			{
-				if ((this._IDProduct != value))
-				{
-					if (this._tbl_Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIDProductChanging(value);
-					this.SendPropertyChanging();
-					this._IDProduct = value;
-					this.SendPropertyChanged("IDProduct");
-					this.OnIDProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int NOT NULL")]
-		public int Amount
-		{
-			get
-			{
-				return this._Amount;
-			}
-			set
-			{
-				if ((this._Amount != value))
-				{
-					this.OnAmountChanging(value);
-					this.SendPropertyChanging();
-					this._Amount = value;
-					this.SendPropertyChanged("Amount");
-					this.OnAmountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Int NOT NULL")]
-		public int UnitPrice
-		{
-			get
-			{
-				return this._UnitPrice;
-			}
-			set
-			{
-				if ((this._UnitPrice != value))
-				{
-					this.OnUnitPriceChanging(value);
-					this.SendPropertyChanging();
-					this._UnitPrice = value;
-					this.SendPropertyChanged("UnitPrice");
-					this.OnUnitPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Bill_tbl_DetailedBill", Storage="_tbl_Bill", ThisKey="IDBill", OtherKey="BillID", IsForeignKey=true)]
-		public tbl_Bill tbl_Bill
-		{
-			get
-			{
-				return this._tbl_Bill.Entity;
-			}
-			set
-			{
-				tbl_Bill previousValue = this._tbl_Bill.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_Bill.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_Bill.Entity = null;
-						previousValue.tbl_DetailedBills.Remove(this);
-					}
-					this._tbl_Bill.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_DetailedBills.Add(this);
-						this._IDBill = value.BillID;
-					}
-					else
-					{
-						this._IDBill = default(int);
-					}
-					this.SendPropertyChanged("tbl_Bill");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Product_tbl_DetailedBill", Storage="_tbl_Product", ThisKey="IDProduct", OtherKey="ProductID", IsForeignKey=true)]
-		public tbl_Product tbl_Product
-		{
-			get
-			{
-				return this._tbl_Product.Entity;
-			}
-			set
-			{
-				tbl_Product previousValue = this._tbl_Product.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_Product.Entity = null;
-						previousValue.tbl_DetailedBills.Remove(this);
-					}
-					this._tbl_Product.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_DetailedBills.Add(this);
-						this._IDProduct = value.ProductID;
-					}
-					else
-					{
-						this._IDProduct = default(int);
-					}
-					this.SendPropertyChanged("tbl_Product");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1121,314 +847,75 @@ namespace QL_SIEU_THI_LTCSDL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_DetailedImportedProduct")]
-	public partial class tbl_DetailedImportedProduct : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Bill")]
+	public partial class tbl_Bill : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ImportedProductID;
+		private int _BillID;
 		
-		private int _ProductID;
-		
-		private int _NumberOfImportedProduct;
-		
-		private int _PriceOfImportedProduct;
-		
-		private int _DateOfExpiration;
-		
-		private EntityRef<tbl_ImportedProduct> _tbl_ImportedProduct;
-		
-		private EntityRef<tbl_Product> _tbl_Product;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnImportedProductIDChanging(int value);
-    partial void OnImportedProductIDChanged();
-    partial void OnProductIDChanging(int value);
-    partial void OnProductIDChanged();
-    partial void OnNumberOfImportedProductChanging(int value);
-    partial void OnNumberOfImportedProductChanged();
-    partial void OnPriceOfImportedProductChanging(int value);
-    partial void OnPriceOfImportedProductChanged();
-    partial void OnDateOfExpirationChanging(int value);
-    partial void OnDateOfExpirationChanged();
-    #endregion
-		
-		public tbl_DetailedImportedProduct()
-		{
-			this._tbl_ImportedProduct = default(EntityRef<tbl_ImportedProduct>);
-			this._tbl_Product = default(EntityRef<tbl_Product>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportedProductID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ImportedProductID
-		{
-			get
-			{
-				return this._ImportedProductID;
-			}
-			set
-			{
-				if ((this._ImportedProductID != value))
-				{
-					if (this._tbl_ImportedProduct.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnImportedProductIDChanging(value);
-					this.SendPropertyChanging();
-					this._ImportedProductID = value;
-					this.SendPropertyChanged("ImportedProductID");
-					this.OnImportedProductIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
-				{
-					if (this._tbl_Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProductIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProductID = value;
-					this.SendPropertyChanged("ProductID");
-					this.OnProductIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfImportedProduct", DbType="Int NOT NULL")]
-		public int NumberOfImportedProduct
-		{
-			get
-			{
-				return this._NumberOfImportedProduct;
-			}
-			set
-			{
-				if ((this._NumberOfImportedProduct != value))
-				{
-					this.OnNumberOfImportedProductChanging(value);
-					this.SendPropertyChanging();
-					this._NumberOfImportedProduct = value;
-					this.SendPropertyChanged("NumberOfImportedProduct");
-					this.OnNumberOfImportedProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceOfImportedProduct", DbType="Int NOT NULL")]
-		public int PriceOfImportedProduct
-		{
-			get
-			{
-				return this._PriceOfImportedProduct;
-			}
-			set
-			{
-				if ((this._PriceOfImportedProduct != value))
-				{
-					this.OnPriceOfImportedProductChanging(value);
-					this.SendPropertyChanging();
-					this._PriceOfImportedProduct = value;
-					this.SendPropertyChanged("PriceOfImportedProduct");
-					this.OnPriceOfImportedProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfExpiration", DbType="Int NOT NULL")]
-		public int DateOfExpiration
-		{
-			get
-			{
-				return this._DateOfExpiration;
-			}
-			set
-			{
-				if ((this._DateOfExpiration != value))
-				{
-					this.OnDateOfExpirationChanging(value);
-					this.SendPropertyChanging();
-					this._DateOfExpiration = value;
-					this.SendPropertyChanged("DateOfExpiration");
-					this.OnDateOfExpirationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_ImportedProduct_tbl_DetailedImportedProduct", Storage="_tbl_ImportedProduct", ThisKey="ImportedProductID", OtherKey="ImportedProductID", IsForeignKey=true)]
-		public tbl_ImportedProduct tbl_ImportedProduct
-		{
-			get
-			{
-				return this._tbl_ImportedProduct.Entity;
-			}
-			set
-			{
-				tbl_ImportedProduct previousValue = this._tbl_ImportedProduct.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_ImportedProduct.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_ImportedProduct.Entity = null;
-						previousValue.tbl_DetailedImportedProducts.Remove(this);
-					}
-					this._tbl_ImportedProduct.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_DetailedImportedProducts.Add(this);
-						this._ImportedProductID = value.ImportedProductID;
-					}
-					else
-					{
-						this._ImportedProductID = default(int);
-					}
-					this.SendPropertyChanged("tbl_ImportedProduct");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Product_tbl_DetailedImportedProduct", Storage="_tbl_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
-		public tbl_Product tbl_Product
-		{
-			get
-			{
-				return this._tbl_Product.Entity;
-			}
-			set
-			{
-				tbl_Product previousValue = this._tbl_Product.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_Product.Entity = null;
-						previousValue.tbl_DetailedImportedProducts.Remove(this);
-					}
-					this._tbl_Product.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_DetailedImportedProducts.Add(this);
-						this._ProductID = value.ProductID;
-					}
-					else
-					{
-						this._ProductID = default(int);
-					}
-					this.SendPropertyChanged("tbl_Product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ImportedProduct")]
-	public partial class tbl_ImportedProduct : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ImportedProductID;
-		
-		private int _DateOfImportedProduct;
+		private int _BilledDate;
 		
 		private int _AdminID;
 		
-		private EntitySet<tbl_DetailedImportedProduct> _tbl_DetailedImportedProducts;
+		private System.Nullable<int> _CustomerID;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnImportedProductIDChanging(int value);
-    partial void OnImportedProductIDChanged();
-    partial void OnDateOfImportedProductChanging(int value);
-    partial void OnDateOfImportedProductChanged();
+    partial void OnBillIDChanging(int value);
+    partial void OnBillIDChanged();
+    partial void OnBilledDateChanging(int value);
+    partial void OnBilledDateChanged();
     partial void OnAdminIDChanging(int value);
     partial void OnAdminIDChanged();
+    partial void OnCustomerIDChanging(System.Nullable<int> value);
+    partial void OnCustomerIDChanged();
     #endregion
 		
-		public tbl_ImportedProduct()
+		public tbl_Bill()
 		{
-			this._tbl_DetailedImportedProducts = new EntitySet<tbl_DetailedImportedProduct>(new Action<tbl_DetailedImportedProduct>(this.attach_tbl_DetailedImportedProducts), new Action<tbl_DetailedImportedProduct>(this.detach_tbl_DetailedImportedProducts));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportedProductID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ImportedProductID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int BillID
 		{
 			get
 			{
-				return this._ImportedProductID;
+				return this._BillID;
 			}
 			set
 			{
-				if ((this._ImportedProductID != value))
+				if ((this._BillID != value))
 				{
-					this.OnImportedProductIDChanging(value);
+					this.OnBillIDChanging(value);
 					this.SendPropertyChanging();
-					this._ImportedProductID = value;
-					this.SendPropertyChanged("ImportedProductID");
-					this.OnImportedProductIDChanged();
+					this._BillID = value;
+					this.SendPropertyChanged("BillID");
+					this.OnBillIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfImportedProduct", DbType="Int NOT NULL")]
-		public int DateOfImportedProduct
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BilledDate", DbType="Int NOT NULL")]
+		public int BilledDate
 		{
 			get
 			{
-				return this._DateOfImportedProduct;
+				return this._BilledDate;
 			}
 			set
 			{
-				if ((this._DateOfImportedProduct != value))
+				if ((this._BilledDate != value))
 				{
-					this.OnDateOfImportedProductChanging(value);
+					this.OnBilledDateChanging(value);
 					this.SendPropertyChanging();
-					this._DateOfImportedProduct = value;
-					this.SendPropertyChanged("DateOfImportedProduct");
-					this.OnDateOfImportedProductChanged();
+					this._BilledDate = value;
+					this.SendPropertyChanged("BilledDate");
+					this.OnBilledDateChanged();
 				}
 			}
 		}
@@ -1453,258 +940,22 @@ namespace QL_SIEU_THI_LTCSDL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_ImportedProduct_tbl_DetailedImportedProduct", Storage="_tbl_DetailedImportedProducts", ThisKey="ImportedProductID", OtherKey="ImportedProductID")]
-		public EntitySet<tbl_DetailedImportedProduct> tbl_DetailedImportedProducts
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int")]
+		public System.Nullable<int> CustomerID
 		{
 			get
 			{
-				return this._tbl_DetailedImportedProducts;
+				return this._CustomerID;
 			}
 			set
 			{
-				this._tbl_DetailedImportedProducts.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tbl_DetailedImportedProducts(tbl_DetailedImportedProduct entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_ImportedProduct = this;
-		}
-		
-		private void detach_tbl_DetailedImportedProducts(tbl_DetailedImportedProduct entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_ImportedProduct = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Product")]
-	public partial class tbl_Product : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ProductID;
-		
-		private string _NameOfProduct;
-		
-		private int _NumberOfProduct;
-		
-		private int _ProductCategoryID;
-		
-		private int _PriceOfProduct;
-		
-		private EntitySet<tbl_DetailedBill> _tbl_DetailedBills;
-		
-		private EntitySet<tbl_DetailedImportedProduct> _tbl_DetailedImportedProducts;
-		
-		private EntityRef<tbl_ProductCategory> _tbl_ProductCategory;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProductIDChanging(int value);
-    partial void OnProductIDChanged();
-    partial void OnNameOfProductChanging(string value);
-    partial void OnNameOfProductChanged();
-    partial void OnNumberOfProductChanging(int value);
-    partial void OnNumberOfProductChanged();
-    partial void OnProductCategoryIDChanging(int value);
-    partial void OnProductCategoryIDChanged();
-    partial void OnPriceOfProductChanging(int value);
-    partial void OnPriceOfProductChanged();
-    #endregion
-		
-		public tbl_Product()
-		{
-			this._tbl_DetailedBills = new EntitySet<tbl_DetailedBill>(new Action<tbl_DetailedBill>(this.attach_tbl_DetailedBills), new Action<tbl_DetailedBill>(this.detach_tbl_DetailedBills));
-			this._tbl_DetailedImportedProducts = new EntitySet<tbl_DetailedImportedProduct>(new Action<tbl_DetailedImportedProduct>(this.attach_tbl_DetailedImportedProducts), new Action<tbl_DetailedImportedProduct>(this.detach_tbl_DetailedImportedProducts));
-			this._tbl_ProductCategory = default(EntityRef<tbl_ProductCategory>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
+				if ((this._CustomerID != value))
 				{
-					this.OnProductIDChanging(value);
+					this.OnCustomerIDChanging(value);
 					this.SendPropertyChanging();
-					this._ProductID = value;
-					this.SendPropertyChanged("ProductID");
-					this.OnProductIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameOfProduct", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string NameOfProduct
-		{
-			get
-			{
-				return this._NameOfProduct;
-			}
-			set
-			{
-				if ((this._NameOfProduct != value))
-				{
-					this.OnNameOfProductChanging(value);
-					this.SendPropertyChanging();
-					this._NameOfProduct = value;
-					this.SendPropertyChanged("NameOfProduct");
-					this.OnNameOfProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfProduct", DbType="Int NOT NULL")]
-		public int NumberOfProduct
-		{
-			get
-			{
-				return this._NumberOfProduct;
-			}
-			set
-			{
-				if ((this._NumberOfProduct != value))
-				{
-					this.OnNumberOfProductChanging(value);
-					this.SendPropertyChanging();
-					this._NumberOfProduct = value;
-					this.SendPropertyChanged("NumberOfProduct");
-					this.OnNumberOfProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductCategoryID", DbType="Int NOT NULL")]
-		public int ProductCategoryID
-		{
-			get
-			{
-				return this._ProductCategoryID;
-			}
-			set
-			{
-				if ((this._ProductCategoryID != value))
-				{
-					if (this._tbl_ProductCategory.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProductCategoryIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProductCategoryID = value;
-					this.SendPropertyChanged("ProductCategoryID");
-					this.OnProductCategoryIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceOfProduct", DbType="Int NOT NULL")]
-		public int PriceOfProduct
-		{
-			get
-			{
-				return this._PriceOfProduct;
-			}
-			set
-			{
-				if ((this._PriceOfProduct != value))
-				{
-					this.OnPriceOfProductChanging(value);
-					this.SendPropertyChanging();
-					this._PriceOfProduct = value;
-					this.SendPropertyChanged("PriceOfProduct");
-					this.OnPriceOfProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Product_tbl_DetailedBill", Storage="_tbl_DetailedBills", ThisKey="ProductID", OtherKey="IDProduct")]
-		public EntitySet<tbl_DetailedBill> tbl_DetailedBills
-		{
-			get
-			{
-				return this._tbl_DetailedBills;
-			}
-			set
-			{
-				this._tbl_DetailedBills.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Product_tbl_DetailedImportedProduct", Storage="_tbl_DetailedImportedProducts", ThisKey="ProductID", OtherKey="ProductID")]
-		public EntitySet<tbl_DetailedImportedProduct> tbl_DetailedImportedProducts
-		{
-			get
-			{
-				return this._tbl_DetailedImportedProducts;
-			}
-			set
-			{
-				this._tbl_DetailedImportedProducts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_ProductCategory_tbl_Product", Storage="_tbl_ProductCategory", ThisKey="ProductCategoryID", OtherKey="ProductCategoryID", IsForeignKey=true)]
-		public tbl_ProductCategory tbl_ProductCategory
-		{
-			get
-			{
-				return this._tbl_ProductCategory.Entity;
-			}
-			set
-			{
-				tbl_ProductCategory previousValue = this._tbl_ProductCategory.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_ProductCategory.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_ProductCategory.Entity = null;
-						previousValue.tbl_Products.Remove(this);
-					}
-					this._tbl_ProductCategory.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_Products.Add(this);
-						this._ProductCategoryID = value.ProductCategoryID;
-					}
-					else
-					{
-						this._ProductCategoryID = default(int);
-					}
-					this.SendPropertyChanged("tbl_ProductCategory");
+					this._CustomerID = value;
+					this.SendPropertyChanged("CustomerID");
+					this.OnCustomerIDChanged();
 				}
 			}
 		}
@@ -1727,30 +978,6 @@ namespace QL_SIEU_THI_LTCSDL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tbl_DetailedBills(tbl_DetailedBill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Product = this;
-		}
-		
-		private void detach_tbl_DetailedBills(tbl_DetailedBill entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Product = null;
-		}
-		
-		private void attach_tbl_DetailedImportedProducts(tbl_DetailedImportedProduct entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Product = this;
-		}
-		
-		private void detach_tbl_DetailedImportedProducts(tbl_DetailedImportedProduct entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Product = null;
 		}
 	}
 }
