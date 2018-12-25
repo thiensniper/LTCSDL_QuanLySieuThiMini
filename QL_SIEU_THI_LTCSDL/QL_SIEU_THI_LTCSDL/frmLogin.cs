@@ -22,7 +22,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            /*Application.Exit();*/
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

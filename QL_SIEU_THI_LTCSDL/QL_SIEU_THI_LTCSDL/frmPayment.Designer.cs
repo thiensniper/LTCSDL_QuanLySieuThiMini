@@ -318,7 +318,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 800;
+            this.timer1.Interval = 1500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // groupBox4
@@ -378,7 +378,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmPayment";
-            this.Text = "frmPayment";
+            this.Text = "Bán hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPayment_FormClosing);
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.groupBox1.ResumeLayout(false);

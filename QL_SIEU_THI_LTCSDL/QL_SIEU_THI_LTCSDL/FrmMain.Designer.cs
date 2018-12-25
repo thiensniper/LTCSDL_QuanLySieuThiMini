@@ -135,7 +135,7 @@
             // 
             // barButtonItemImport
             // 
-            this.barButtonItemImport.Caption = "Hàng hóa";
+            this.barButtonItemImport.Caption = "Sản phẩm";
             this.barButtonItemImport.Id = 10;
             this.barButtonItemImport.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
             this.barButtonItemImport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
@@ -192,6 +192,7 @@
             this.barButtonItem5.Id = 19;
             this.barButtonItem5.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.account;
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -213,9 +214,9 @@
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemProductCategory);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemImport);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemExport);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemProductCategory);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Hàng hóa và bán hàng";
             // 

@@ -71,5 +71,10 @@ namespace QL_SIEU_THI_LTCSDL
         {
             this.Close();
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.OpenForm(typeof(frmMyAccount));
+        }
     }
 }

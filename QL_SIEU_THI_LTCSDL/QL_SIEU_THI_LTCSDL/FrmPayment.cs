@@ -100,7 +100,7 @@ namespace QL_SIEU_THI_LTCSDL
                 if (dr[0].Equals(txtProductID.Text))
                 {
                     int numberOfProduct = int.Parse(dr[2].ToString());
-                    dr[2] = (++numberOfProduct).ToString();
+                    dr[2] = (numberOfProduct + int.Parse(txtNumberOfProduct.Text)).ToString();
                     dgvBill.DataSource = dt;
                     return;
                 }
@@ -135,6 +135,11 @@ namespace QL_SIEU_THI_LTCSDL
                 }
                 txtProductID.Text = decoded;
                 timer1.Start();
+
+                //Bip sound
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "..//sound//Beep.wav";
+                player.Play();
 
                 //isEnableScanner = false;
             }
