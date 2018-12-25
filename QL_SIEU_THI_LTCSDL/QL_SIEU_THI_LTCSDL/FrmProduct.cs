@@ -96,7 +96,7 @@ namespace QL_SIEU_THI_LTCSDL
         {
             if (txtName.Text.Length == 0 || txtPrice.Text.Length == 0 || cboProductCategory.SelectedIndex == -1)
             {
-                MessageBox.Show("Thông tin không được trống!", "Thông báo");
+                XtraMessageBox.Show("Thông tin không được trống!", "Thông báo");
                 return;
             }
             try

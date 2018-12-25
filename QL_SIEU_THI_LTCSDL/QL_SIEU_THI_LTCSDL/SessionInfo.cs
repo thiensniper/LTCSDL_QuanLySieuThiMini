@@ -8,6 +8,7 @@ namespace QL_SIEU_THI_LTCSDL
 {
     public static class SessionInfo
     {
+        public static int adminID;
         public static string username;
         private static string password;
         public static string authorization;

@@ -32,6 +32,7 @@ namespace QL_SIEU_THI_LTCSDL
             {
                 SessionInfo.username = account.NameOfAdmin;
                 SessionInfo.authorization = account.AuthorizationOfAdmin;
+                SessionInfo.adminID = account.AdminID;
                 FrmMain frm = new FrmMain();
                 this.Hide();
                 frm.ShowDialog();

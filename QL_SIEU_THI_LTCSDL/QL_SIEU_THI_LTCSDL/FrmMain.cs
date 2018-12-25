@@ -49,7 +49,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void barButtonItemExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.OpenForm(typeof(FrmPayment));
         }
 
         private void barButtonItemProductCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

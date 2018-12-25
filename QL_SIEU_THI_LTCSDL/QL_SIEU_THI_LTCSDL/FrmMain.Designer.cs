@@ -89,7 +89,7 @@
             this.ribbonPageManageAccount,
             this.rbMangeProduct,
             this.ribbonReport});
-            this.ribbonControl.Size = new System.Drawing.Size(1005, 185);
+            this.ribbonControl.Size = new System.Drawing.Size(861, 146);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // applicationMenu
@@ -272,9 +272,9 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 542);
+            this.ClientSize = new System.Drawing.Size(861, 440);
             this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);

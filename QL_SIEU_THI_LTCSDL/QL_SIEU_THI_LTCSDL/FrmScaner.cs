@@ -82,7 +82,7 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-                timer1.Stop();
+            timer1.Stop();
             BarcodeReader Reader = new BarcodeReader();
             Result result = Reader.Decode((Bitmap)pictureBox1.Image);
             try
