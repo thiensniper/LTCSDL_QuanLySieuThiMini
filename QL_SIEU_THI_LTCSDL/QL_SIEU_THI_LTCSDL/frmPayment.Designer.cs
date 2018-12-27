@@ -49,6 +49,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCheckOut = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
@@ -69,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfProduct.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductID.Properties)).BeginInit();
@@ -84,7 +86,7 @@
             this.groupBox1.Controls.Add(this.dgvProduct);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 396);
+            this.groupBox1.Size = new System.Drawing.Size(491, 396);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm hiện có";
@@ -102,7 +104,7 @@
             this.dgvProduct.Location = new System.Drawing.Point(3, 16);
             this.dgvProduct.MainView = this.gridView1;
             this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.Size = new System.Drawing.Size(502, 373);
+            this.dgvProduct.Size = new System.Drawing.Size(486, 373);
             this.dgvProduct.TabIndex = 1;
             this.dgvProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -162,7 +164,7 @@
             this.groupBox2.Controls.Add(this.dgvBill);
             this.groupBox2.Location = new System.Drawing.Point(525, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(492, 396);
+            this.groupBox2.Size = new System.Drawing.Size(476, 396);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa đơn";
@@ -181,7 +183,7 @@
             this.dgvBill.Location = new System.Drawing.Point(3, 16);
             this.dgvBill.MainView = this.gridView2;
             this.dgvBill.Name = "dgvBill";
-            this.dgvBill.Size = new System.Drawing.Size(487, 373);
+            this.dgvBill.Size = new System.Drawing.Size(471, 373);
             this.dgvBill.TabIndex = 1;
             this.dgvBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -237,6 +239,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.pictureBox2);
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.btnCheckOut);
             this.groupBox3.Controls.Add(this.btnCreate);
@@ -251,10 +254,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thao tác";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.bar_code;
+            this.pictureBox2.Location = new System.Drawing.Point(69, 75);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(171, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(171, 52);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,6 +290,7 @@
             // 
             // btnCreate
             // 
+            this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.ImageOptions.Image")));
             this.btnCreate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnCreate.Location = new System.Drawing.Point(11, 72);
@@ -372,7 +389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 476);
+            this.ClientSize = new System.Drawing.Size(1354, 476);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -389,6 +406,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfProduct.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductID.Properties)).EndInit();
@@ -429,5 +447,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTelOfCustomer;
         private System.Windows.Forms.Label lblNameOfCustomer;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

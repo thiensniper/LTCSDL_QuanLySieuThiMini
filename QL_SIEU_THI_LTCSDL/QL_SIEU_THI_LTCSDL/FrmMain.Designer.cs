@@ -128,8 +128,8 @@
             // 
             this.barbtnManageAdminAccount.Caption = "Tài khoản Admin";
             this.barbtnManageAdminAccount.Id = 9;
-            this.barbtnManageAdminAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnManageAdminAccount.ImageOptions.Image")));
-            this.barbtnManageAdminAccount.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.Seo_Admin_01_128;
+            this.barbtnManageAdminAccount.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.call_center;
+            this.barbtnManageAdminAccount.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.call_center;
             this.barbtnManageAdminAccount.Name = "barbtnManageAdminAccount";
             this.barbtnManageAdminAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageAdminAccount_ItemClick);
             // 
@@ -137,8 +137,8 @@
             // 
             this.barButtonItemImport.Caption = "Sản phẩm";
             this.barButtonItemImport.Id = 10;
-            this.barButtonItemImport.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
-            this.barButtonItemImport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.truck;
+            this.barButtonItemImport.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.delivery1;
+            this.barButtonItemImport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.delivery;
             this.barButtonItemImport.Name = "barButtonItemImport";
             this.barButtonItemImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemImport_ItemClick);
             // 
@@ -146,8 +146,8 @@
             // 
             this.barbtnManageCustomerAccount.Caption = "Tài khoản khách hàng";
             this.barbtnManageCustomerAccount.Id = 10;
-            this.barbtnManageCustomerAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnManageCustomerAccount.ImageOptions.Image")));
-            this.barbtnManageCustomerAccount.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.client_512;
+            this.barbtnManageCustomerAccount.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.postman1;
+            this.barbtnManageCustomerAccount.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.postman;
             this.barbtnManageCustomerAccount.Name = "barbtnManageCustomerAccount";
             this.barbtnManageCustomerAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnManageCustomerAccount_ItemClick);
             // 
@@ -155,7 +155,8 @@
             // 
             this.barButtonItemExport.Caption = "Bán hàng";
             this.barButtonItemExport.Id = 11;
-            this.barButtonItemExport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.forklift;
+            this.barButtonItemExport.ImageOptions.Image = global::QL_SIEU_THI_LTCSDL.Properties.Resources.pay1;
+            this.barButtonItemExport.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.pay;
             this.barButtonItemExport.Name = "barButtonItemExport";
             this.barButtonItemExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemExport_ItemClick);
             // 
@@ -164,7 +165,7 @@
             this.barButtonItemProductCategory.Caption = "Loại sản phẩm";
             this.barButtonItemProductCategory.Id = 12;
             this.barButtonItemProductCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemProductCategory.ImageOptions.Image")));
-            this.barButtonItemProductCategory.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources._020_287_open_product_box_install_128;
+            this.barButtonItemProductCategory.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.boxes;
             this.barButtonItemProductCategory.Name = "barButtonItemProductCategory";
             this.barButtonItemProductCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProductCategory_ItemClick_1);
             // 
@@ -182,7 +183,7 @@
             // 
             this.barButtonItem2.Caption = "Doanh thu";
             this.barButtonItem2.Id = 17;
-            this.barButtonItem2.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.revenue2;
+            this.barButtonItem2.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.folder;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
@@ -190,7 +191,7 @@
             // 
             this.barButtonItem5.Caption = "Thông tin tài khoản";
             this.barButtonItem5.Id = 19;
-            this.barButtonItem5.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.account;
+            this.barButtonItem5.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.support;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
@@ -198,7 +199,7 @@
             // 
             this.barButtonItem6.Caption = "Đăng xuất";
             this.barButtonItem6.Id = 20;
-            this.barButtonItem6.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.logout;
+            this.barButtonItem6.ImageOptions.LargeImage = global::QL_SIEU_THI_LTCSDL.Properties.Resources.log_out;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
