@@ -17,7 +17,7 @@ namespace QL_SIEU_THI_LTCSDL
     {
         private Table<tbl_Product> tbl_Product;
         private Table<tbl_ProductCategory> tbl_ProductCategory;
-        
+
         private DatabaseDataContext db;
         private BindingManagerBase ListProduct;
 
@@ -30,15 +30,15 @@ namespace QL_SIEU_THI_LTCSDL
             {
                 this.normal = value;
                 dgvProduct.Enabled = value;
-                btnCreate.Enabled = value;
-                btnDelete.Enabled = value;
+                if (!SessionInfo.authorization.Equals("Staff")) btnCreate.Enabled = value;
+                if (!SessionInfo.authorization.Equals("Staff"))  btnDelete.Enabled = value;
                 btnEdit.Enabled = value;
                 btnSave.Enabled = !value;
                 btnCancel.Enabled = !value;
-                txtName.Enabled = !value;
+                if (!SessionInfo.authorization.Equals("Staff")) txtName.Enabled = !value;
                 nupAmount.Enabled = !value;
-                txtPrice.Enabled = !value;
-                cboProductCategory.Enabled = !value;
+                if (!SessionInfo.authorization.Equals("Staff"))  txtPrice.Enabled = !value;
+                if (!SessionInfo.authorization.Equals("Staff"))  cboProductCategory.Enabled = !value;
             }
         }
         #endregion
@@ -73,6 +73,20 @@ namespace QL_SIEU_THI_LTCSDL
             cboProductCategory.DataBindings.Add("SelectedValue", tbl_Product, "ProductCategoryID", true);
 
             ListProduct = this.BindingContext[tbl_Product];
+
+            CheckIfIsAStaff();
+        }
+
+        private void CheckIfIsAStaff()
+        {
+            if (SessionInfo.authorization.Equals("Staff"))
+            {
+                btnCreate.Enabled = false;
+                btnDelete.Enabled = false;
+                txtName.Enabled = false;
+                txtPrice.Enabled = false;
+                cboProductCategory.Enabled = false;
+            }
         }
 
         private void LoadDatabaseToCombobox()

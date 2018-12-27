@@ -76,5 +76,20 @@ namespace QL_SIEU_THI_LTCSDL
         {
             this.OpenForm(typeof(frmMyAccount));
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            CheckIfIsAStaff();
+        }
+
+        private void CheckIfIsAStaff()
+        {
+            if (SessionInfo.authorization.Equals("Staff"))
+            {
+                barButtonItemProductCategory.Enabled = false;
+                barbtnManageAdminAccount.Enabled = false;
+                barButtonItemReport.Enabled = false;
+            }
+        }
     }
 }

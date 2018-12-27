@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPayment));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProduct = new DevExpress.XtraGrid.GridControl();
@@ -49,6 +49,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCheckOut = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +63,8 @@
             this.lblNameOfCustomer = new System.Windows.Forms.Label();
             this.txtCustomerID = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -84,7 +87,7 @@
             this.groupBox1.Controls.Add(this.dgvProduct);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 396);
+            this.groupBox1.Size = new System.Drawing.Size(507, 669);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm hiện có";
@@ -94,15 +97,15 @@
             this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.RelationName = "Level2";
             this.dgvProduct.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode3,
+            gridLevelNode4});
             this.dgvProduct.Location = new System.Drawing.Point(3, 16);
             this.dgvProduct.MainView = this.gridView1;
             this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.Size = new System.Drawing.Size(502, 373);
+            this.dgvProduct.Size = new System.Drawing.Size(502, 646);
             this.dgvProduct.TabIndex = 1;
             this.dgvProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -162,7 +165,7 @@
             this.groupBox2.Controls.Add(this.dgvBill);
             this.groupBox2.Location = new System.Drawing.Point(525, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(492, 396);
+            this.groupBox2.Size = new System.Drawing.Size(492, 669);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa đơn";
@@ -173,15 +176,15 @@
             this.dgvBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.RelationName = "Level2";
+            gridLevelNode5.RelationName = "Level1";
+            gridLevelNode6.RelationName = "Level2";
             this.dgvBill.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3,
-            gridLevelNode4});
+            gridLevelNode5,
+            gridLevelNode6});
             this.dgvBill.Location = new System.Drawing.Point(3, 16);
             this.dgvBill.MainView = this.gridView2;
             this.dgvBill.Name = "dgvBill";
-            this.dgvBill.Size = new System.Drawing.Size(487, 373);
+            this.dgvBill.Size = new System.Drawing.Size(487, 646);
             this.dgvBill.TabIndex = 1;
             this.dgvBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -237,6 +240,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.btnCheckOut);
             this.groupBox3.Controls.Add(this.btnCreate);
@@ -250,6 +254,17 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thao tác";
+            // 
+            // btnClear
+            // 
+            this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
+            this.btnClear.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnClear.Location = new System.Drawing.Point(95, 140);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(70, 62);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Tạo mới HD";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // pictureBox1
             // 
@@ -267,7 +282,7 @@
             this.btnCheckOut.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnCheckOut.Location = new System.Drawing.Point(11, 140);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(154, 62);
+            this.btnCheckOut.Size = new System.Drawing.Size(78, 62);
             this.btnCheckOut.TabIndex = 17;
             this.btnCheckOut.Text = "Thanh toán";
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
@@ -368,14 +383,34 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Mã khách hàng:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1020, 411);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Tổng tiền:";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(1082, 411);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalPrice.TabIndex = 22;
+            this.lblTotalPrice.Text = "0";
+            // 
             // FrmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 476);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmPayment";
             this.Text = "Bán hàng";
@@ -396,6 +431,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -429,5 +465,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTelOfCustomer;
         private System.Windows.Forms.Label lblNameOfCustomer;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label label4;
     }
 }

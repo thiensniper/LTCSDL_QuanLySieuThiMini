@@ -102,6 +102,7 @@ namespace QL_SIEU_THI_LTCSDL
                     int numberOfProduct = int.Parse(dr[2].ToString());
                     dr[2] = (numberOfProduct + int.Parse(txtNumberOfProduct.Text)).ToString();
                     dgvBill.DataSource = dt;
+                    cal_total_price();
                     return;
                 }
             }
@@ -115,6 +116,7 @@ namespace QL_SIEU_THI_LTCSDL
             dt.Rows.Add(ndr);
             dgvBill.DataSource = dt;
             txtNumberOfProduct.Text = "1";
+            cal_total_price();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -152,6 +154,11 @@ namespace QL_SIEU_THI_LTCSDL
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            if (lblNameOfCustomer.Text.Trim().Length == 0)
+            {
+                XtraMessageBox.Show("Hãy nhập thông tin khách hàng", "Thông báo");
+                return;
+            }
             try
             {
                 tbl_Bill bill = new tbl_Bill();
@@ -176,6 +183,8 @@ namespace QL_SIEU_THI_LTCSDL
 
                 db.SubmitChanges();
                 XtraMessageBox.Show("Thanh toán thành công", "Thông báo");
+                btnCheckOut.Enabled = false;
+                btnCreate.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -191,7 +200,18 @@ namespace QL_SIEU_THI_LTCSDL
             {
                 view.DeleteSelectedRows();
                 e.Handled = true;
+                cal_total_price();
             }
+        }
+
+        private void cal_total_price()
+        {
+            long res = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                res += (int.Parse(dr[3].ToString()) * int.Parse(dr[2].ToString()));
+            }
+            lblTotalPrice.Text = res.ToString();
         }
 
         private void txtCustomerID_Enter(object sender, EventArgs e)
@@ -225,6 +245,19 @@ namespace QL_SIEU_THI_LTCSDL
         private void FrmPayment_FormClosing(object sender, FormClosingEventArgs e)
         {
             FinalFrame.Stop();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.dt.Clear();
+            txtProductID.Text = "";
+            txtNumberOfProduct.Text = "1";
+            txtCustomerID.Text = "";
+            lblNameOfCustomer.Text = "";
+            lblTelOfCustomer.Text = "";
+            btnCheckOut.Enabled = true;
+            btnCreate.Enabled = true;
+            lblTotalPrice.Text = "0";
         }
     }
 }
