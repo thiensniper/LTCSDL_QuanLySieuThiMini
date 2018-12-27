@@ -312,5 +312,32 @@
   <ItemGroup>
     <None Include="image\account.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="image\postman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\call-center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\boxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\bar-code.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
